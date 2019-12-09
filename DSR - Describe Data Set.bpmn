@@ -1,0 +1,1429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <collaboration id="Collaboration">
+    <participant id="dsrDescribeDataSet" name="DSR - Describe Data Set " processRef="dsrDescribeDataSetTest"></participant>
+  </collaboration>
+  <process id="dsrDescribeDataSetTest" name="DSR - Describe Data Set" isExecutable="true">
+    <documentation>This workflow is used to create dataset</documentation>
+    <laneSet id="laneSet_dsrDescribeDataSetTest">
+      <lane id="lane1">
+        <flowNodeRef>startevent1</flowNodeRef>
+        <flowNodeRef>scripttask1</flowNodeRef>
+        <flowNodeRef>usertask2</flowNodeRef>
+        <flowNodeRef>usertask3</flowNodeRef>
+        <flowNodeRef>endevent4</flowNodeRef>
+        <flowNodeRef>servicetask1</flowNodeRef>
+        <flowNodeRef>scripttask4</flowNodeRef>
+        <flowNodeRef>exclusivegateway5</flowNodeRef>
+        <flowNodeRef>exclusivegateway6</flowNodeRef>
+        <flowNodeRef>endevent6</flowNodeRef>
+        <flowNodeRef>exclusivegateway7</flowNodeRef>
+        <flowNodeRef>usertask7</flowNodeRef>
+        <flowNodeRef>exclusivegateway8</flowNodeRef>
+        <flowNodeRef>boundarytimer2</flowNodeRef>
+        <flowNodeRef>scripttask2</flowNodeRef>
+        <flowNodeRef>exclusivegateway9</flowNodeRef>
+        <flowNodeRef>endevent7</flowNodeRef>
+        <flowNodeRef>scripttask5</flowNodeRef>
+        <flowNodeRef>usertask8</flowNodeRef>
+        <flowNodeRef>exclusivegateway10</flowNodeRef>
+        <flowNodeRef>usertask9</flowNodeRef>
+        <flowNodeRef>usertask10</flowNodeRef>
+        <flowNodeRef>exclusivegateway11</flowNodeRef>
+        <flowNodeRef>endevent8</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="startevent1" name="Start" activiti:initiator="startUser">
+      <extensionElements>
+        <activiti:formProperty id="applicationOwnerRoleId" name="please enter 'applicationOwnerRoleId'" type="string" default="2379d4e8-7c52-492b-a170-84341ceed0ba" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="applicationDomainId" name="please enter 'applicationDomainId'" type="string" default="cd49519b-c03b-4723-874f-707e7f58e61b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="descriptionAttrId" name="please enter UUid of 'descriptionAttrId'" type="string" default="00000000-0000-0000-0000-000000003114" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="epsDataSetNameAttrId" name="please enter UUid of 'EPSDataSetName'" type="string" default="16ce27d3-5d57-403c-8fac-b3ff516f85c2" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="entityURIAttrId" name="please enter UUid of 'Entity URI '" type="string" default="fd6af675-0320-4c9d-be97-a6504d773747" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="contactEmailAttrId" name="please enter UUid of  'contactEmailAttrId'" type="string" default="27595c98-199c-4e5f-bb67-498404765750" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="producedByApplicationRelTypeId" name="please enter UUid 'Produced By ApplicationRelTypeId '" type="string" default="e34d6070-0fc2-4181-a4f7-23d0d43c4abf" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataSetAssetTypeId" name="please enter 'Data Set Asset TypeId'" type="string" default="00000000-0000-0000-0001-000400000001" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="applicationAssetId" name="please enter Uuid 'applicationAssetId'" type="string" default="a65a6a5e-2176-4020-a8fd-a0c94189ba64" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="applicationOwnerDelegateRoleId" name="applicationOwnerDelegateRoleId" type="string" default="eb97c95a-ecb6-4843-86db-a5b81eaf3f65 " readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="appStatus" name="Application Status" type="string" default="Build,Plan,Operate" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="buildStatusId" name="BuildStatusId" type="string" default="9ad488e1-2d43-402b-a4e5-dffd75a60741" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="operateStatusId" name="Operate Status Id" type="string" default="1e4c36d6-a20f-49ba-9b80-fa54feffac67" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="candidateStatusId" name="Candidate Status Id" type="string" default="00000000-0000-0000-0000-000000005008" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="epsProducerNameAttrId" name="epsProducerNameAttrId " type="string" default="1fe65bc0-8e47-419b-b0f8-c0087251f78a" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dsAlternateProviderApplicationRelTypeId" name="DSalternateProviderApplicationRelTypeId" type="string" default="9432633a-ac89-442d-8491-b3f936d8e17b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="epsProducerDomainId" name="eps Producer DomainId" type="string" default="426a7110-8ee2-44c1-9810-7ddb5f624e83" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="everestProducerTypeId" name="everestProducerTypeId" type="string" default="fe243d82-6b8d-4c68-8ab4-0c74477af856" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="changeTicketAttrTypeId" name="please enter 'Change Ticket Attribute Id'" type="string" default="b44d89c7-f6c3-414a-8917-ba8c28d90e4f" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="planStatusId" name="please enter 'Plan Status Id'" type="string" default="e5733990-e699-4081-88b2-bc3a656fc3c0" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="changeTicketAttrId" name="Please enter 'changeTicketAttrId'" type="string" default="b44d89c7-f6c3-414a-8917-ba8c28d90e4f" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="schemaAssetTypeId" name="Please Enter &quot;schemaAssetTypeId&quot;" type="string" default="00000000-0000-0000-0001-000400000002" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="physicalDataDictionaryDomainTypeId" name="Please Enter &quot;physicalDataDictionaryDomainTypeId&quot;" type="string" default="00000000-0000-0000-0000-000000030011" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataSetContainsDataSourceSchemaRelTypeId" name="Please Enter &quot;dataSetContainsDataSourceSchemaRelTypeId&quot;" type="string" default="913b4d30-3295-4248-8eeb-c73c9041464d" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="schemaDefinitionAttrTypeId" name="Please Enter &quot;schemaDefinitionAttrTypeId&quot;" type="string" default="e1ca89dc-df3b-41b2-99ea-0e75f3ff26e4" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="primaryKeysAttrTypeId" name="Please Enter &quot;primaryKeysAttrTypeId&quot;" type="string" default="a3138dea-815a-492f-a840-ebc744ee10ac" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="physicalDataDictionariesCommunityName" name="Physical Data Dictionaries Community Name (don't changeable until if necessary)  " type="string" default="Physical Data Dictionaries" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataSourceTypeAttrTypeId" name="Please Enter &quot;dataSourceTypeAttrTypeId&quot;" type="string" default="00000000-0000-0000-0001-000500000018" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="everestAssetTypeId" name="Please enter 'everestAssetTypeId'" type="string" default="fe243d82-6b8d-4c68-8ab4-0c74477af856" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="instanceDevelopmentDomainId" name="Please enter 'instanceDevelopmentDomainId'" type="string" default="c99d8923-1b87-4ffe-a3df-720b85ec617f" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="environmentAttributTypeId" name="Please enter 'environmentAttributTypeId'" type="string" default="b31b1219-2266-4d28-9e97-9446d826fa4b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="hummingBirdInstanceName" name="Please enter 'hummingBirdInstanceName'" type="string" default="Hummingbird" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataAssetCheckedOutByEverestProdRelTypeId" name="Please enter 'dataAssetCheckedOutByEverestProdRelTypeId'" type="string" default="5b06ed07-ae43-4c18-87a3-13ca2aff6047" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataAssetUtilizePipelineRelTypeId" name="Please enter 'dataAssetUtilizePipelineRelTypeId'" type="string" default="81928df8-f0eb-414c-9a19-3883620fdc7e" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="applicationIDAttributeTypeId" name="Please Enter &quot;applicationIDAttributeTypeId&quot;" type="string" default="646b388c-3a8f-421d-a3a4-23cd3181d395" readable="false" required="true"></activiti:formProperty>
+      </extensionElements>
+    </startEvent>
+    <scriptTask id="scripttask1" name="Finding SEAL Applications" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.dto.instance.asset.FindAssetsRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.AddAttributeRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.FindAttributesRequest
+import com.collibra.dgc.core.api.dto.instance.domain.FindDomainsRequest
+import com.collibra.dgc.core.api.dto.MatchMode
+import com.collibra.dgc.core.api.component.instance.CommunityApi
+import com.collibra.dgc.core.api.component.logger.LoggerApi
+import com.collibra.dgc.core.api.dto.instance.community.FindCommunitiesRequest
+import com.collibra.dgc.core.api.component.instance.DomainApi
+
+
+def typeIds=[]
+typeIds.add(string2Uuid(schemaAssetTypeId))
+
+def findTheAssetInDomain(domainId, typeIds) {
+	return assetApi.findAssets(
+		FindAssetsRequest.builder()
+		.typeIds(typeIds)
+		.domainId(domainId)
+		.build()
+		).getResults();
+}
+def getStatusIdByName(statusName) {
+	return statusApi.getStatusByName(statusName).getId()
+}
+
+
+def errorMessage
+def isError
+try
+{
+	/* Finding Community Name and Id for domain */
+	def communityId = item.getCommunity()
+	loggerApi.info('communityId-->'+communityId)
+	def communityName = communityApi.getCommunity(string2Uuid(item.getCommunity())).getName()
+	loggerApi.info('communityName-->'+communityName)
+	def LOB= communityName.split(' -')[0]
+	loggerApi.info('comShortname-->'+LOB)
+	execution.setVariable('LOB',LOB)
+	
+ /* Finding SEAL Id  and Application */
+ def applicationId
+   def sealId = item.getName().split(' -')[0]
+	loggerApi.info('sealId-->'+sealId)
+
+	def applications = assetApi.findAssets(
+	FindAssetsRequest.builder()
+	.domainId(string2Uuid(applicationDomainId))
+	.name(sealId)
+	.nameMatchMode(MatchMode.ANYWHERE)
+	.build()
+	).getResults()
+	loggerApi.info('applications----->'+applications)
+	if(!applications.isEmpty())
+	{
+		applicationId = applications.get(0).getId()
+		loggerApi.info('applicationId ---->'+applicationId )
+	}
+	   execution.setVariable('applicationId',applicationId)
+	execution.setVariable('sealId',sealId)
+	
+	
+	def applicationValidStatusesToList=utility.toList(appStatus)
+	def applicationValidStatusIdsList = []
+	for(applicationValidStatus in applicationValidStatusesToList)
+	{
+		applicationValidStatusIdsList.add(uuid2String(getStatusIdByName(applicationValidStatus)))
+	}
+	
+	/*Find status for application*/
+	def alternateProvAppFlag = true
+	def offset  = 0
+	def limit = 1000
+	def alternateProvAppList = []
+	def appTypeIds = []
+	appTypeIds.add(string2Uuid(applicationAssetId))
+	def statusTypeIds = []
+	statusTypeIds.add(string2Uuid(buildStatusId))
+	statusTypeIds.add(string2Uuid(operateStatusId))
+	statusTypeIds.add(string2Uuid(planStatusId))
+	
+	while(alternateProvAppFlag) {
+		def findStatusAssets = assetApi.findAssets(
+		FindAssetsRequest.builder()
+		.domainId(string2Uuid(applicationDomainId))
+		.typeIds(appTypeIds)
+		.statusIds(statusTypeIds)
+		.limit(limit)
+		.offset(offset)
+		.build()
+		).getResults()
+		
+		alternateProvAppList.addAll(findStatusAssets)
+		
+		if(findStatusAssets.size() == 1000) {
+			offset += findStatusAssets.size()
+		
+		} else {
+			alternateProvAppFlag = false
+		}
+	}
+	
+
+	loggerApi.info('statusSealApplication--.'+alternateProvAppList.size())
+
+	def statusList= []
+	for(assets in alternateProvAppList)
+	{
+		statusList.add(assets.getId())
+	}
+	// execution.setVariable('findStatusAssets',findStatusAssets)
+
+
+	execution.setVariable('statusList',statusList)
+	
+	//   Getting assets from epsProducerNames From Producer Name List///
+	
+	def typeIds1 = []
+	typeIds1.add(string2Uuid(everestProducerTypeId)) //data set type id
+
+	def listProducerName= assetApi.findAssets(
+	FindAssetsRequest.builder()
+	.typeIds(typeIds1)
+	.domainId(string2Uuid(epsProducerDomainId)) // EPS domain id
+	.build()
+	).getResults();
+  loggerApi.info('listProducername--->'+listProducerName)
+  def epsProducerList = []
+	def epsProducerMap = [:]
+	for(epsName in listProducerName) {
+		epsProducerList.add(epsName.getName())
+		epsProducerMap.put(uuid2String(epsName.getId()), epsName.getName())
+		
+	}
+	loggerApi.info('epsProducerList------>'+epsProducerList)
+
+	def domainFound = true
+	def dataSetDomainId
+	def dataSetDomainName
+	def dataSetDomain = domainApi.findDomains(
+		FindDomainsRequest.builder()
+		.name(sealId+' - Data Sets')
+		.nameMatchMode(MatchMode.EXACT)
+		.communityId(string2Uuid(communityId))
+		.build()
+		).getResults()
+	
+	loggerApi.info('dataSetDomain---->'+dataSetDomain)
+	if(!dataSetDomain.isEmpty())
+	{
+	 dataSetDomainId = dataSetDomain.get(0).getId()
+	 dataSetDomainName = dataSetDomain.get(0).getName()
+	}
+	loggerApi.info('dataSetDomainId---->'+dataSetDomainId)
+	//loggerApi.info('dataSetDomainName---->'+dataSetDomainName)
+	
+	def domainName= item.getName()
+	
+	if(dataSetDomainName != domainName)
+	{
+		domainFound = false
+	}
+	
+	def redirectUrl = applicationApi.getInfo().getBaseUrl()+'domain/'+uuid2String(dataSetDomainId)
+	
+	// finding Schemas from the Physical Data Dictionary community
+	
+	def parentCommunityId=  communityApi.getCommunity(string2Uuid(item.getCommunity())).getParent().getId()
+	loggerApi.info("item.getCommunity()"+parentCommunityId)
+	
+	def pddcommunities = communityApi.findCommunities(FindCommunitiesRequest.builder()
+		  .name('Physical Data Dictionaries')
+		  .nameMatchMode(MatchMode.ANYWHERE)
+		  .parentId(parentCommunityId)
+		  .build()
+		  ).getResults()
+	//loggerApi.info('community--->'+pddcommunities.get(0).getId())
+	def currentDomainName = domainApi.getDomain(string2Uuid(item.getVocabulary())).getName()
+	//def currentDomainName= item.getName()
+	def domainShortName = currentDomainName.split('-')[0]
+	loggerApi.info("domainShortName--->"+domainShortName)
+	def noSchema
+	def dsRegistryDomain
+	if(!pddcommunities.isEmpty())
+	{
+	 dsRegistryDomain = domainApi.findDomains(FindDomainsRequest.builder()
+		.name(domainShortName)
+		.nameMatchMode(MatchMode.ANYWHERE)
+		.communityId(pddcommunities.get(0).getId())
+		.build()
+		).getResults()
+	}
+	loggerApi.info('dsRegistryDomain----'+dsRegistryDomain)
+	
+	def schemaAssets
+	def schemaList = []
+	for(domain in dsRegistryDomain)
+		{
+		 schemaAssets=findTheAssetInDomain(domain.getId(),typeIds)
+		 if(!schemaAssets.isEmpty()) {
+			for(schemaAsset in schemaAssets)
+			{
+				loggerApi.info('schemaAssets--->'+schemaAsset.getStatus().getName())
+				if(schemaAsset.getStatus().getName() == "Candidate") {
+					schemaList.add(uuid2String(schemaAsset.getId()))
+					loggerApi.info('schemaAssets--->'+schemaAsset.getName())
+				}
+				
+			}
+			}
+		 
+		
+	}
+	if(schemaList.isEmpty())
+	{
+		noSchema= "<br><b> <font color='green'>* No schemas available.</font></b></br>"
+	}
+	
+	/*Find instance name */
+	def instanceNameValuesMap = [:]
+	def codeValueTypes = []
+	codeValueTypes.add(string2Uuid(everestAssetTypeId))
+	def listDevInstance = assetApi.findAssets(
+			FindAssetsRequest.builder()
+			.domainId(string2Uuid(instanceDevelopmentDomainId)) // EPS domain id
+			.build()
+			).getResults();
+
+	loggerApi.info("listDevInstance"+listDevInstance)
+	envtypeIds =[]
+	envtypeIds.add(string2Uuid(environmentAttributTypeId))
+	for(instance in listDevInstance) {
+		
+		def envAttributes = attributeApi.findAttributes(
+				FindAttributesRequest.builder()
+				.typeIds(envtypeIds)
+				.assetId(instance.getId())
+				.build()
+				).getResults()
+				if(!envAttributes.isEmpty())
+				{
+		if(envAttributes.get(0).getValue() == 'Development' || envAttributes.get(0).getValue() == 'Integration')
+		{
+			instanceNameValuesMap.put(uuid2String(instance.getId()), instance.getName())
+			}
+		}
+	}
+	execution.setVariable('noSchema',noSchema)
+	execution.setVariable('schemaList',schemaList)
+	execution.setVariable('epsProducerList',epsProducerList)
+	execution.setVariable('epsProducerMap',epsProducerMap)
+	execution.setVariable('validationMsg','')
+	execution.setVariable('domainFound',domainFound)
+	execution.setVariable('redirectUrl',redirectUrl)
+	execution.setVariable('dataSetDomainName',dataSetDomainName)
+	execution.setVariable('instanceNameValuesMap',instanceNameValuesMap)
+	execution.setVariable('applicationValidStatusIdsToCsv',applicationValidStatusIdsList.join(","))
+	
+	
+ execution.setVariable('isError',false)
+} catch(Exception ex) {
+	isError = true
+	errorMessage = ex.getMessage()
+	execution.setVariable('isError',true)
+	execution.setVariable('errorMessage',ex.getMessage())
+}
+	
+
+	
+	]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow4" sourceRef="startevent1" targetRef="scripttask1"></sequenceFlow>
+    <userTask id="usertask2" name="Data Set Metadata Form" activiti:candidateUsers="user(${startUser})">
+      <documentation>Please  provide all required metadata for Data Set
+${validationMsg}</documentation>
+      <extensionElements>
+        <activiti:formProperty id="producedByApplication" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Produced By Application &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; producedByApplicationColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; producedByApplication()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; producedByApplicationHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Name of Seal Application that produces the Data Set &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function producedByApplication() {var y = document.getElementsByClassName(&quot; producedByApplicationColor&quot;);var x = document.getElementsByClassName(&quot; producedByApplicationHelpText&quot;);for (var i=0;i&lt;x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="term" default="${applicationId}" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="alternateProviderApplication" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Alternate Authoritative Provider Application &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; alternateProviderApplicationColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; alternateProviderApplication()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; alternateProviderApplicationHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Name of  Application which is the alternate provider of the Data Set &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function alternateProviderApplication() {var y = document.getElementsByClassName(&quot; alternateProviderApplicationColor&quot;);var x = document.getElementsByClassName(&quot; alternateProviderApplicationHelpText&quot;);for (var i=0;i&lt;x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="term">
+          <activiti:value id="conceptType" name="${applicationAssetId}"></activiti:value>
+          <activiti:value id="domainId" name="${applicationDomainId}"></activiti:value>
+          <activiti:value id="statusId" name="${applicationValidStatusIdsToCsv}"></activiti:value>
+          <activiti:value id="helpText" name="&lt;b&gt;&lt;font color=green&gt;Search by Seal id (Ex.  00001) &lt;/font&gt;&lt;/b&gt;"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="name" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt;Data Set Name &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;nameColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;name()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;nameHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Name of Data Set based on naming convention guidelines &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function name() {var y = document.getElementsByClassName(&quot;nameColor&quot;);var x = document.getElementsByClassName(&quot;nameHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}setTimeout(function() {for (var i = 0;i &lt; document.getElementsByName(&quot;name&quot;).length;i++) {var x = document.getElementsByName(&quot;name&quot;)[i].parentNode;var formValue = x.parentNode;var formWrapper = formValue.parentNode;var modalContent = formWrapper.parentNode;var modalDialog = modalContent.parentNode;modalDialog.classList.add(&quot;custom-dataset-modal&quot;);}}, 0);&lt;/script&gt;&lt;style&gt; .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.modalwindow.custom-dataset-modal {margin-left: -45% !important;width: 90% !important;min-height: 680px !important;height: auto !important;top: 40px !important;}.form-wrapper {max-height: fit-content;}&lt;/style&gt;" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="epsProducerName" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Data Set Producer Name Prefix &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;epsProducerNameColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;epsProducerName()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;epsProducerNameHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;A unique prefix indicating name of the producer of the Data Set or Offering from list of producers.   Producer Name is a grouping mechanism that may differ by LOB. &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function epsProducerName() {var y = document.getElementsByClassName(&quot;epsProducerNameColor&quot;);var x = document.getElementsByClassName(&quot;epsProducerNameHelpText&quot;);for (var i =0;i&lt;x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="term" required="true">
+          <activiti:value id="domainId" name="${epsProducerDomainId}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="description" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt;Description &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;descriptionColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;description()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;descriptionHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;A collection of related Physical Schemas, produced by an Application, representing Data Elements &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function description() {var y = document.getElementsByClassName(&quot;descriptionColor&quot;);var x = document.getElementsByClassName(&quot;descriptionHelpText&quot;);for (var i=0;i&lt;x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="plainText" required="true"></activiti:formProperty>
+        <activiti:formProperty id="contacteMail" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Contact Email &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;contactMailColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;contactMail()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;contactMailHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Provide Contact E-Mail &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function contactMail() {var y = document.getElementsByClassName(&quot;contactMailColor&quot;);var x = document.getElementsByClassName(&quot;contactMailHelpText&quot;);for (var i=0;i&lt;x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="instanceName" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Instance Name &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;instanceNameColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;instanceName()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;instanceNameHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Select Instance Name &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function instanceName() {var y = document.getElementsByClassName(&quot;instanceNameColor&quot;);var x = document.getElementsByClassName(&quot;instanceNameHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="dynamicEnum" default="dfc27d26-3ddb-4a97-8e3a-accd43f00c06" required="true">
+          <activiti:value id="dynamicValuesExpression" name="${instanceNameValuesMap}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="schema" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Schema &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; schemaColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; schema()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; schemaHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt; The Schema (s) used by the Application from Data Factory Registered Data Sources &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function schema() {var y = document.getElementsByClassName(&quot; schemaColor&quot;);var x = document.getElementsByClassName(&quot; schemaHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="term">
+          <activiti:value id="multiValue" name="true"></activiti:value>
+          <activiti:value id="proposedValues" name="${schemaList}"></activiti:value>
+          <activiti:value id="proposedFixed" name="true"></activiti:value>
+          <activiti:value id="helpText" name="${noSchema}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="schemaName" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Avro Schema Name &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;avroSchemaName&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;avroSchemaName()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;avroSchemaNameHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Please Provide Avro Schema Name &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function avroSchemaName() {var y = document.getElementsByClassName(&quot;avroSchemaName&quot;);var x = document.getElementsByClassName(&quot;avroSchemaNameHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="string"></activiti:formProperty>
+        <activiti:formProperty id="schemaDefinition" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Avro Schema Definition &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; schemaDefColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; schemaDef()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; schemaDefHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt; Textual description of Avro/JSON schema structures and fields (transition design) &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function schemaDef() {var y = document.getElementsByClassName(&quot; schemaDefColor&quot;);var x = document.getElementsByClassName(&quot; schemaDefHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="plainText"></activiti:formProperty>
+        <activiti:formProperty id="primaryKeys" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt;Avro Primary Keys &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; primaryKeysColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; primaryKeys()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; primaryKeysHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;AVRO schema Header Key &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function primaryKeys() {var y = document.getElementsByClassName(&quot; primaryKeysColor&quot;);var x = document.getElementsByClassName(&quot; primaryKeysHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="plainText"></activiti:formProperty>
+        <activiti:formProperty id="alternateSchemaLocation" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Alternate Schema Location &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; entityURIColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; entityURI()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; entityURIHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;URL of Alternative Model Registery when Databook Firmwide Model registry is not being used &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function entityURI() {var y = document.getElementsByClassName(&quot; entityURIColor&quot;);var x = document.getElementsByClassName(&quot; entityURIHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="string"></activiti:formProperty>
+        <activiti:formProperty id="createDataOffering" name="Create Data Offering" type="button" default="false"></activiti:formProperty>
+        <activiti:formProperty id="submit" name="Save and Close" type="button" default="false"></activiti:formProperty>
+        <activiti:formProperty id="cancel" name="Cancel" type="button"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <userTask id="usertask3" name="Error Message" activiti:candidateUsers="user(${startUser})">
+      <documentation>Check below error,for more information,check databook console -&gt; Data Governance Center Node -&gt;Logs-&gt;dgc.log file&lt;br&gt;&lt;br&gt;${errorMessage}</documentation>
+    </userTask>
+    <endEvent id="endevent4" name="End"></endEvent>
+    <sequenceFlow id="flow22" sourceRef="usertask3" targetRef="endevent4"></sequenceFlow>
+    <serviceTask id="servicetask1" name="Create Data Offering" activiti:class="com.collibra.dgc.core.workflow.activiti.delegate.StartWorkflowInstanceDelegate">
+      <extensionElements>
+        <activiti:field name="resourceId">
+          <activiti:expression><![CDATA[${datasetdomain}]]></activiti:expression>
+        </activiti:field>
+        <activiti:field name="resourceType">
+          <activiti:string><![CDATA[VC]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="processId">
+          <activiti:string><![CDATA[dsrDescribeDataOffering]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="propertyKeyList">
+          <activiti:string><![CDATA[fromWorkflow,selectedDatset]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="propertyValueList">
+          <activiti:expression><![CDATA[${'true'},${datasetIdforoffering}]]></activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <scriptTask id="scripttask4" name="Validation For Duplicate Assets" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.component.instance.CommunityApi
+import com.collibra.dgc.core.api.dto.MatchMode
+import com.collibra.dgc.core.api.dto.PagedResponse
+import com.collibra.dgc.core.api.dto.instance.asset.AddAssetRequest
+import com.collibra.dgc.core.api.dto.instance.asset.FindAssetsRequest
+import com.collibra.dgc.core.api.dto.instance.community.FindCommunitiesRequest
+import com.collibra.dgc.core.api.dto.instance.domain.FindDomainsRequest
+import com.collibra.dgc.core.api.dto.instance.relation.FindRelationsRequest
+import com.collibra.dgc.core.api.model.instance.Asset
+import com.collibra.dgc.core.api.model.instance.Relation
+
+def findSchemaName(communityId, schemaName) {
+	return phyDataDicDomain = domainApi.findDomains(
+			FindDomainsRequest.builder()
+			.name(schemaName)
+			.nameMatchMode(MatchMode.ANYWHERE)
+			.communityId(communityId)
+			.build()
+			).getResults()
+}
+
+def findAssets(name, matchMode,statusIds,typeIds, domainId,communityId) {
+	
+		List<Asset> assets = new ArrayList<Asset>();
+		FindAssetsRequest.Builder   builder         = new FindAssetsRequest().builder();
+		Boolean moreToProcess                               = true;
+		int offset                                          = 0;
+		while(moreToProcess){
+			builder
+					.offset(offset)
+					.limit(1000)
+			PagedResponse<Asset> response  = assetApi.findAssets(builder.name(name).nameMatchMode(matchMode).typeIds(typeIds).domainId(domainId).statusIds(statusIds).communityId(communityId).build());
+			assets.addAll(response.getResults());
+			if(assets.size()==response.total){
+				moreToProcess = false;
+			}
+			else
+			{
+				offset = assets.size();
+			}
+		}
+		return assets;
+	}
+	
+
+def findAttribute(assetId, typeIds) {
+	def attributes = attributeApi.findAttributes(
+			FindAttributesRequest.builder()
+			.assetId(assetId)
+			.typeIds(typeIds)
+			.build()
+			).getResults()
+
+	if(!attributes.isEmpty()) {
+		return attributes.get(0)
+	}
+}
+
+def findRelations(sourceId,relationTypeId,targetId) {
+	
+		List<Relation> relations = new ArrayList<Relation>();
+		FindRelationsRequest.Builder   builder         = new FindRelationsRequest().builder();
+		Boolean moreToProcess                               = true;
+		int offset                                          = 0;
+		while(moreToProcess){
+			builder
+					.offset(offset)
+					.limit(1000)
+			PagedResponse<Relation> response  =  relationApi.findRelations(builder.sourceId(sourceId).targetId(targetId).relationTypeId(relationTypeId).build());
+			relations.addAll(response.getResults());
+			if(relations.size()==response.total){
+				moreToProcess = false;
+			}
+			else
+			{
+				offset = relations.size();
+			}
+		}
+		return relations;
+	}
+	
+def assetsExists = false
+//def hyphenExists=false
+def splName
+def dsName = name.trim().replaceAll("\\s+", " ")
+
+splName = dsName.split('-')
+loggerApi.info('name-->'+splName)
+//checkHyphen.add(splName)
+def validationMsg = ""
+if(splName.size()!=1)
+{
+	validationMsg = "<br><b><font color = 'red'>* Please enter the proper dataset name. Hyphen is not allowed </font></b><br>"
+}
+def instanceNameChecking =""
+
+if(execution.getVariable("instanceName") != "") {
+	//if(instanceNameValuesMap.get(instanceName) == "Humming Bird")
+	if(assetApi.getAsset(string2Uuid(instanceName)).getName() == hummingBirdInstanceName)
+		{
+		instanceNameChecking = ""
+		}
+		else
+		{
+			instanceNameChecking = "_"+assetApi.getAsset(string2Uuid(instanceName)).getName()
+		}
+	
+} else {
+	validationMsg += "<br><b><font color = 'red'>* Please select instance name </font></b><br>"
+}
+
+def typeIds=[]
+typeIds.add(string2Uuid(dataSetAssetTypeId))
+
+def findApplicationAttr
+def findDS = []
+def dataSetName
+def dataSetExists = false
+def redirectUrl
+def dsFound
+def dsFullName = epsProducerMap.get(epsProducerName)+"-"+dsName.replaceAll(" ","") + instanceNameChecking
+loggerApi.info("dsFullName-->"+dsFullName)
+
+loggerApi.info("applicationId--->"+applicationId)
+findDS = findRelations(null,string2Uuid(producedByApplicationRelTypeId),string2Uuid(producedByApplication))
+loggerApi.info("findDS->"+findDS)
+
+if(!findDS.isEmpty()) {
+
+dsFound = findDS.find{
+//assetApi.getAsset(it.getSource().getId()).getName()
+it.getSource().getName() == dsFullName
+}
+def findDataSet = findAssets(dsFullName, MatchMode.EXACT,null,null, null,null)
+def findDataSetId
+if(!findDataSet.isEmpty()){
+findDataSetId =findDataSet.get(0).getId()
+}
+loggerApi.info("findDataSetId--->"+findDataSetId)
+
+if(dsFound != null)
+{
+redirectUrl = applicationApi.getInfo().getBaseUrl()+'asset/'+uuid2String(findDataSetId)
+//dataSetName = dsFound.getId()
+//loggerApi.info("dataSetName--->"+dataSetName)
+dataSetExists = true
+}
+}
+
+def desc = description.toString().replace("&nbsp;"," ")
+def replaceHtml = desc.replaceAll("\\<.*?\\>", "")
+
+loggerApi.info('description.toString().trim()---'+replaceHtml)
+if(replaceHtml.trim().isEmpty()) {
+	validationMsg += "<br><b><font color = 'red'>* Description cannot be null, Please provide proper description </font></b><br>"
+}
+
+
+def parentCommunityId = communityApi.getCommunity(string2Uuid(item.getCommunity())).getParent().getId()
+loggerApi.info('parent community --->'+parentCommunityId)
+
+def phyDataDicComm = communityApi.findCommunities(
+		FindCommunitiesRequest.builder()
+		.name(LOB + " - "+physicalDataDictionariesCommunityName)
+		.nameMatchMode(MatchMode.ANYWHERE)
+		.parentId(parentCommunityId)
+		.build()
+		).getResults()
+
+loggerApi.info('phyDataDicComm344489 --->'+phyDataDicComm.get(0).getId())
+//loggerApi.info('testingdomain1025----'+sealId + " - "+ schemaName.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" "))
+if(!schemaName.isEmpty())
+{
+	def phyDataDicDomain = findSchemaName(phyDataDicComm.get(0).getId(), sealId + " - "+ schemaName.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" "))
+	if(!phyDataDicDomain.isEmpty())
+	{
+		validationMsg += "<br><b> <font color='red'>* Avro schema name alreay exists. " +phyDataDicDomain[0].getName()+ "</font></b></br>"
+
+	}
+}
+if(!alternateSchemaLocation.isEmpty())
+{
+	def alternatePhyDataDicDomain = findSchemaName(phyDataDicComm.get(0).getId(), sealId + " - "+ alternateSchemaLocation.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" "))
+	if(!alternatePhyDataDicDomain.isEmpty())
+	{
+		validationMsg += "<br><b> <font color='red'>* Alternate schema location alreay exists. " +alternatePhyDataDicDomain[0].getName()+ "</font></b></br>"
+
+	}
+}
+if(schema.isEmpty() && schemaName.isEmpty() && alternateSchemaLocation.isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Please provide Schema or Schema Name or Alternate Schema Location </font></b></br>"
+}
+
+if(!schemaName.isEmpty() && schemaDefinition.toString().isEmpty() && primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema definiton and Avro Primary key is mandatory </font></b></br>"
+} else if(schemaName.isEmpty() && !schemaDefinition.toString().isEmpty() && primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema Name and Avro Primary key is mandatory </font></b></br>"
+} else if(schemaName.isEmpty() && schemaDefinition.toString().isEmpty() && !primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema Name and Avro Schema definiton is mandatory </font></b></br>"
+} else if(!schemaName.isEmpty() && !schemaDefinition.toString().isEmpty() && primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Primary key is mandatory </font></b></br>"
+} else if(schemaName.isEmpty() && !schemaDefinition.toString().isEmpty() && !primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema is mandatory </font></b></br>"
+} else if(!schemaName.isEmpty() && schemaDefinition.toString().isEmpty() && !primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema Definition mandatory </font></b></br>"
+}
+
+loggerApi.info("schemaName.trim().toLowerCase() == alternateSchemaLocation.trim().toLowerCase()"+schemaName.trim().toLowerCase() +"="+ alternateSchemaLocation.trim().toLowerCase())
+if(!schemaName.isEmpty() && !alternateSchemaLocation.isEmpty()) {
+	if(schemaName.trim().toLowerCase().replaceAll("\\s+", " ") == alternateSchemaLocation.trim().toLowerCase().replaceAll("\\s+", " ")) {
+		validationMsg += "<br><b> <font color='red'>* Same name entered in Schema Name and Alternate Schema Location </font></b></br>"
+	}
+}
+
+execution.setVariable('validationMsg',validationMsg)
+//execution.setVariable('dataSetName',dataSetName)
+execution.setVariable('dataSetExists',dataSetExists)
+execution.setVariable('redirectUrl',redirectUrl)
+
+]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow38" sourceRef="exclusivegateway11" targetRef="scripttask4">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${submit || createDataOffering}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway5" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow40" sourceRef="scripttask4" targetRef="exclusivegateway5"></sequenceFlow>
+    <sequenceFlow id="flow41" sourceRef="exclusivegateway5" targetRef="exclusivegateway6">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${validationMsg=="" && dataSetExists == false}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway6" name="Exclusive Gateway"></exclusiveGateway>
+    <endEvent id="endevent6" name="End"></endEvent>
+    <sequenceFlow id="flow44" name="Save and Close" sourceRef="exclusivegateway6" targetRef="scripttask2">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${submit}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow45" name="Create Data Offering" sourceRef="exclusivegateway6" targetRef="scripttask5">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${createDataOffering}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow47" sourceRef="exclusivegateway5" targetRef="usertask2">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${validationMsg!=""}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway7" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow49" sourceRef="exclusivegateway7" targetRef="usertask2">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${domainFound == 'true'}]]></conditionExpression>
+    </sequenceFlow>
+    <userTask id="usertask7" name=" " activiti:candidateUsers="user(${startUser})">
+      <documentation>Create Data Set workflow cannot be initiated from this domain. &lt;b&gt;&lt;a href="${redirectUrl}"&gt; Please click here to navigate to Data Set Domain - ${dataSetDomainName}&lt;/a&gt;&lt;/b&gt;</documentation>
+    </userTask>
+    <sequenceFlow id="flow50" sourceRef="exclusivegateway7" targetRef="usertask7">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${domainFound == 'false'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow51" sourceRef="usertask7" targetRef="endevent4"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway8" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow53" sourceRef="scripttask1" targetRef="exclusivegateway8"></sequenceFlow>
+    <sequenceFlow id="flow54" sourceRef="exclusivegateway8" targetRef="usertask3">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${isError==true}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow55" sourceRef="exclusivegateway8" targetRef="exclusivegateway7">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${isError==false}]]></conditionExpression>
+    </sequenceFlow>
+    <boundaryEvent id="boundarytimer2" name="Timer" attachedToRef="usertask7" cancelActivity="true">
+      <timerEventDefinition>
+        <timeDuration>PT5M</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <sequenceFlow id="flow56" sourceRef="boundarytimer2" targetRef="endevent4"></sequenceFlow>
+    <scriptTask id="scripttask2" name="Create Data Set" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.dto.instance.attribute.AddAttributeRequest
+import com.collibra.dgc.core.api.dto.instance.community.FindCommunitiesRequest
+import com.collibra.dgc.core.api.dto.instance.domain.AddDomainRequest
+import com.collibra.dgc.core.api.component.instance.CommunityApi
+import com.collibra.dgc.core.api.component.instance.DomainApi
+import com.collibra.dgc.core.api.dto.MatchMode
+import com.collibra.dgc.core.api.dto.instance.asset.AddAssetRequest
+import com.collibra.dgc.core.api.dto.instance.relation.AddRelationRequest
+import com.collibra.dgc.core.api.dto.instance.asset.ChangeAssetRequest
+
+//def domainId=item.getId()
+
+def addDomain(domainName, communityId) {
+	return domainApi.addDomain(
+			AddDomainRequest.builder()
+			.name(domainName)
+			.typeId(string2Uuid(physicalDataDictionaryDomainTypeId))
+			.communityId(communityId)
+			.build()
+			)
+}
+def domainId=string2Uuid(item.id)
+def addAttribute = { assetId, typeId, value ->
+	attributeApi.addAttribute(
+			AddAttributeRequest.builder()
+			.assetId(assetId)
+			.typeId(typeId)
+			.value(value)
+			.build()
+			)
+}
+
+def addRelation= {sourceId, typeId, targetId ->
+	relationApi.addRelation(
+			AddRelationRequest.builder()
+			.sourceId(sourceId)
+			.typeId(typeId)
+			.targetId(targetId)
+			.build()
+			)
+}
+
+def phyDataDicDomain
+def alterPhyDataDicDomain
+//def isError
+//def errorMessage
+def dsfrmName = name.trim().replaceAll("\\s+", " ")
+def instanceNameChecking
+if(execution.getVariable("instanceName") != "") {
+	if(assetApi.getAsset(string2Uuid(instanceName)).getName() == hummingBirdInstanceName)
+	{
+		instanceNameChecking = ""
+	}
+	else
+	{
+		instanceNameChecking = "_"+assetApi.getAsset(string2Uuid(instanceName)).getName()
+	}
+}
+//trydata
+//{
+/ Creating DataSet /
+
+/  Getting Full Name based on logic /
+def dataSetAsset
+
+if(LOB == "CORP")
+{
+	dataSetAsset = assetApi.addAsset(
+			AddAssetRequest.builder()
+			.name( epsProducerMap.get(epsProducerName)+"-"+dsfrmName.replaceAll(" ","") + instanceNameChecking)
+			.displayName(dsfrmName+instanceNameChecking)
+			.typeId(string2Uuid(dataSetAssetTypeId))
+			.domainId(domainId)
+			.status(string2Uuid(candidateStatusId))
+			.build()
+			)
+
+}
+else
+{
+	dataSetAsset = assetApi.addAsset(
+			AddAssetRequest.builder()
+			.name( LOB+"."+sealId+"."+dsfrmName.replaceAll(" ","")+instanceNameChecking)
+			.displayName(dsfrmName+instanceNameChecking)
+			.typeId(string2Uuid(dataSetAssetTypeId))
+			.domainId(domainId)
+			.status(string2Uuid(candidateStatusId))
+			.build()
+			)
+
+}
+
+def dataSetAssetId = dataSetAsset.getId()
+
+def datasetIdforoffering = uuid2String(dataSetAssetId)
+execution.setVariable('datasetIdforoffering',datasetIdforoffering)
+
+
+/ Adding Attributes to Data Set /
+//loggerApi.info("description.toString()---"+description.toString())
+//def desc = description.toString().replace("&nbsp;"," ")
+def contacteMailTrim = contacteMail.trim().replaceAll("\\s+", "")
+
+addAttribute(dataSetAssetId,string2Uuid(descriptionAttrId),description.toString().trim().replaceAll("\\s+", " "))
+addAttribute(dataSetAssetId,string2Uuid(epsProducerNameAttrId),epsProducerMap.get(epsProducerName))
+addAttribute(dataSetAssetId,string2Uuid(contactEmailAttrId),contacteMailTrim)
+
+
+/ Adding Relation to the Data set /
+if(execution.getVariable("alternateProviderApplication") != "")
+{
+	addRelation(dataSetAssetId,string2Uuid(dsAlternateProviderApplicationRelTypeId),string2Uuid(alternateProviderApplication))
+}
+
+if(execution.getVariable("schema") != "")
+{
+	def schemaList = utility.toList(schema)
+	for(eachSchema in schemaList)
+	{
+		addRelation(dataSetAssetId,string2Uuid(dataSetContainsDataSourceSchemaRelTypeId),string2Uuid(eachSchema))
+	}
+}
+
+
+
+addRelation(dataSetAssetId,string2Uuid(producedByApplicationRelTypeId),string2Uuid(producedByApplication))
+
+def redirectUrl = applicationApi.getInfo().getBaseUrl()+'asset/'+uuid2String(dataSetAssetId)
+execution.setVariable('dataSetAssetId',uuid2String(dataSetAssetId))
+//	execution.setVariable('isError',false)
+execution.setVariable('redirectUrl',redirectUrl)
+/*} catch(Exception ex) {
+ isError = true
+ errorMessage = ex.getMessage()
+ execution.setVariable('isError',true)
+ execution.setVariable('errorMessage',ex.getMessage())
+ }*/
+
+
+def parentCommunityId = communityApi.getCommunity(string2Uuid(item.getCommunity())).getParent().getId()
+loggerApi.info('parent community --->'+parentCommunityId)
+
+def phyDataDicComm = communityApi.findCommunities(
+		FindCommunitiesRequest.builder()
+		.name(physicalDataDictionariesCommunityName)
+		.nameMatchMode(MatchMode.ANYWHERE)
+		.parentId(parentCommunityId)
+		.build()
+		).getResults()
+
+loggerApi.info('phyDataDicComm --->'+phyDataDicComm)
+
+def dataSetDomainName = domainApi.getDomain(string2Uuid(item.getVocabulary())).getName()
+
+def dataSetDomainSealId = dataSetDomainName.split('-')[0]
+
+
+
+
+
+if(execution.getVariable("alternateSchemaLocation") != "")
+{
+
+
+	def alternateSchema = alternateSchemaLocation.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" ")
+	if(!phyDataDicComm.isEmpty()) {
+		 alterPhyDataDicDomain = addDomain(dataSetDomainSealId+'- '+alternateSchema, phyDataDicComm.get(0).getId())
+	}
+	loggerApi.info('alternateSchema'+alternateSchema)
+	if(!alternateSchema.isEmpty()) {
+		def alternateSchemaAsset = assetApi.addAsset(
+				AddAssetRequest.builder()
+				.name(alternateSchema)
+				.typeId(string2Uuid(schemaAssetTypeId))
+				.domainId(alterPhyDataDicDomain.getId())
+				.build()
+				)
+		addAttribute(alternateSchemaAsset.getId(),string2Uuid(dataSourceTypeAttrTypeId),'Avro')
+		relationApi.addRelation(
+				AddRelationRequest.builder()
+				.sourceId(dataSetAssetId)
+				.typeId(string2Uuid(dataSetContainsDataSourceSchemaRelTypeId))
+				.targetId(alternateSchemaAsset.getId())
+				.build()
+				)
+	}
+
+}
+if(!schemaName.isEmpty() && schemaName != null && schemaDefinition != null && primaryKeys != null)
+{
+
+	def schemaFilter = schemaName.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" ")
+	if(!phyDataDicComm.isEmpty()) {
+		 phyDataDicDomain = addDomain(dataSetDomainSealId+'- '+schemaFilter, phyDataDicComm.get(0).getId())
+	}
+
+	loggerApi.info('phyDataDicDomain----> '+phyDataDicDomain)
+
+	def schemaAsset = assetApi.addAsset(
+			AddAssetRequest.builder()
+			.name(schemaFilter)
+			.typeId(string2Uuid(schemaAssetTypeId))
+			.domainId(phyDataDicDomain.getId())
+			.build()
+			)
+
+	def schemaAssetId = schemaAsset.getId()
+
+	def schemDef = schemaDefinition.toString().replace("&nbsp;"," ")
+	addAttribute(schemaAssetId,string2Uuid(schemaDefinitionAttrTypeId),schemDef.replaceAll("\\<.*?\\>", ""))
+	addAttribute(schemaAssetId,string2Uuid(primaryKeysAttrTypeId),primaryKeys.toString().trim().replaceAll("\\s+", " "))
+	addAttribute(schemaAssetId,string2Uuid(dataSourceTypeAttrTypeId),'Avro')
+
+
+	relationApi.addRelation(
+			AddRelationRequest.builder()
+			.sourceId(dataSetAssetId)
+			.typeId(string2Uuid(dataSetContainsDataSourceSchemaRelTypeId))
+			.targetId(schemaAssetId)
+			.build()
+			)
+
+}
+
+/*name prefix relation*/
+relationApi.addRelation(
+		AddRelationRequest.builder()
+		.sourceId(dataSetAssetId)
+		.typeId(string2Uuid(dataAssetCheckedOutByEverestProdRelTypeId))
+		.targetId(string2Uuid(epsProducerName))
+		.build()
+		)
+/*Instance Relation*/
+relationApi.addRelation(
+		AddRelationRequest.builder()
+		.sourceId(dataSetAssetId)
+		.typeId(string2Uuid(dataAssetUtilizePipelineRelTypeId))
+		.targetId(string2Uuid(instanceName))
+		.build()
+		)
+
+
+def datasetdomain = domainApi.getDomain(string2Uuid(item.getVocabulary())).getId()
+loggerApi.info("datasetdomain ===========>"+datasetdomain)
+
+
+execution.setVariable('datasetdomain',uuid2String(datasetdomain))
+]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow26" sourceRef="scripttask5" targetRef="exclusivegateway9"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway9" name="Exclusive Gateway"></exclusiveGateway>
+    <endEvent id="endevent7" name="End"></endEvent>
+    <scriptTask id="scripttask5" name="Create Data Set" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.dto.instance.attribute.AddAttributeRequest
+import com.collibra.dgc.core.api.dto.instance.community.FindCommunitiesRequest
+import com.collibra.dgc.core.api.dto.instance.domain.AddDomainRequest
+import com.collibra.dgc.core.api.component.instance.CommunityApi
+import com.collibra.dgc.core.api.component.instance.DomainApi
+import com.collibra.dgc.core.api.dto.MatchMode
+import com.collibra.dgc.core.api.dto.instance.asset.AddAssetRequest
+import com.collibra.dgc.core.api.dto.instance.relation.AddRelationRequest
+import com.collibra.dgc.core.api.dto.instance.asset.ChangeAssetRequest
+
+//def domainId=item.getId()
+
+def addDomain(domainName, communityId) {
+	return domainApi.addDomain(
+			AddDomainRequest.builder()
+			.name(domainName)
+			.typeId(string2Uuid(physicalDataDictionaryDomainTypeId))
+			.communityId(communityId)
+			.build()
+			)
+}
+def domainId=string2Uuid(item.id)
+def addAttribute = { assetId, typeId, value ->
+	attributeApi.addAttribute(
+			AddAttributeRequest.builder()
+			.assetId(assetId)
+			.typeId(typeId)
+			.value(value)
+			.build()
+			)
+}
+
+def addRelation= {sourceId, typeId, targetId ->
+	relationApi.addRelation(
+			AddRelationRequest.builder()
+			.sourceId(sourceId)
+			.typeId(typeId)
+			.targetId(targetId)
+			.build()
+			)
+}
+
+def phyDataDicDomain
+def alterPhyDataDicDomain
+//def isError
+//def errorMessage
+def dsfrmName = name.trim().replaceAll("\\s+", " ")
+def instanceNameChecking
+if(execution.getVariable("instanceName") != "") {
+	if(assetApi.getAsset(string2Uuid(instanceName)).getName() == hummingBirdInstanceName)
+	{
+		instanceNameChecking = ""
+	}
+	else
+	{
+		instanceNameChecking = "_"+assetApi.getAsset(string2Uuid(instanceName)).getName()
+	}
+}
+//trydata
+//{
+/ Creating DataSet /
+
+/  Getting Full Name based on logic /
+def dataSetAsset
+
+if(LOB == "CORP")
+{
+	dataSetAsset = assetApi.addAsset(
+			AddAssetRequest.builder()
+			.name( epsProducerMap.get(epsProducerName)+"-"+dsfrmName.replaceAll(" ","") + instanceNameChecking)
+			.displayName(dsfrmName+instanceNameChecking)
+			.typeId(string2Uuid(dataSetAssetTypeId))
+			.domainId(domainId)
+			.status(string2Uuid(candidateStatusId))
+			.build()
+			)
+
+}
+else
+{
+	dataSetAsset = assetApi.addAsset(
+			AddAssetRequest.builder()
+			.name( LOB+"."+sealId+"."+dsfrmName.replaceAll(" ","")+instanceNameChecking)
+			.displayName(dsfrmName+instanceNameChecking)
+			.typeId(string2Uuid(dataSetAssetTypeId))
+			.domainId(domainId)
+			.status(string2Uuid(candidateStatusId))
+			.build()
+			)
+
+}
+
+def dataSetAssetId = dataSetAsset.getId()
+
+def datasetIdforoffering = uuid2String(dataSetAssetId)
+execution.setVariable('datasetIdforoffering',datasetIdforoffering)
+
+
+/ Adding Attributes to Data Set /
+//loggerApi.info("description.toString()---"+description.toString())
+//def desc = description.toString().replace("&nbsp;"," ")
+def contacteMailTrim = contacteMail.trim().replaceAll("\\s+", "")
+
+addAttribute(dataSetAssetId,string2Uuid(descriptionAttrId),description.toString().trim().replaceAll("\\s+", " "))
+addAttribute(dataSetAssetId,string2Uuid(epsProducerNameAttrId),epsProducerMap.get(epsProducerName))
+addAttribute(dataSetAssetId,string2Uuid(contactEmailAttrId),contacteMailTrim)
+
+
+/ Adding Relation to the Data set /
+if(execution.getVariable("alternateProviderApplication") != "")
+{
+	addRelation(dataSetAssetId,string2Uuid(dsAlternateProviderApplicationRelTypeId),string2Uuid(alternateProviderApplication))
+}
+
+if(execution.getVariable("schema") != "")
+{
+	def schemaList = utility.toList(schema)
+	for(eachSchema in schemaList)
+	{
+		addRelation(dataSetAssetId,string2Uuid(dataSetContainsDataSourceSchemaRelTypeId),string2Uuid(eachSchema))
+	}
+}
+
+
+
+addRelation(dataSetAssetId,string2Uuid(producedByApplicationRelTypeId),string2Uuid(producedByApplication))
+
+def redirectUrl = applicationApi.getInfo().getBaseUrl()+'asset/'+uuid2String(dataSetAssetId)
+execution.setVariable('dataSetAssetId',uuid2String(dataSetAssetId))
+//	execution.setVariable('isError',false)
+execution.setVariable('redirectUrl',redirectUrl)
+/*} catch(Exception ex) {
+ isError = true
+ errorMessage = ex.getMessage()
+ execution.setVariable('isError',true)
+ execution.setVariable('errorMessage',ex.getMessage())
+ }*/
+
+
+def parentCommunityId = communityApi.getCommunity(string2Uuid(item.getCommunity())).getParent().getId()
+loggerApi.info('parent community --->'+parentCommunityId)
+
+def phyDataDicComm = communityApi.findCommunities(
+		FindCommunitiesRequest.builder()
+		.name(physicalDataDictionariesCommunityName)
+		.nameMatchMode(MatchMode.ANYWHERE)
+		.parentId(parentCommunityId)
+		.build()
+		).getResults()
+
+loggerApi.info('phyDataDicComm --->'+phyDataDicComm)
+
+def dataSetDomainName = domainApi.getDomain(string2Uuid(item.getVocabulary())).getName()
+
+def dataSetDomainSealId = dataSetDomainName.split('-')[0]
+
+
+
+
+
+if(execution.getVariable("alternateSchemaLocation") != "")
+{
+
+
+	def alternateSchema = alternateSchemaLocation.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" ")
+	if(!phyDataDicComm.isEmpty()) {
+		 alterPhyDataDicDomain = addDomain(dataSetDomainSealId+'- '+alternateSchema, phyDataDicComm.get(0).getId())
+	}
+	loggerApi.info('alternateSchema'+alternateSchema)
+	if(!alternateSchema.isEmpty()) {
+		def alternateSchemaAsset = assetApi.addAsset(
+				AddAssetRequest.builder()
+				.name(alternateSchema)
+				.typeId(string2Uuid(schemaAssetTypeId))
+				.domainId(alterPhyDataDicDomain.getId())
+				.build()
+				)
+		addAttribute(alternateSchemaAsset.getId(),string2Uuid(dataSourceTypeAttrTypeId),'Avro')
+		relationApi.addRelation(
+				AddRelationRequest.builder()
+				.sourceId(dataSetAssetId)
+				.typeId(string2Uuid(dataSetContainsDataSourceSchemaRelTypeId))
+				.targetId(alternateSchemaAsset.getId())
+				.build()
+				)
+	}
+
+}
+if(!schemaName.isEmpty() && schemaName != null && schemaDefinition != null && primaryKeys != null)
+{
+
+	def schemaFilter = schemaName.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" ")
+	if(!phyDataDicComm.isEmpty()) {
+		 phyDataDicDomain = addDomain(dataSetDomainSealId+'- '+schemaFilter, phyDataDicComm.get(0).getId())
+	}
+
+	loggerApi.info('phyDataDicDomain----> '+phyDataDicDomain)
+
+	def schemaAsset = assetApi.addAsset(
+			AddAssetRequest.builder()
+			.name(schemaFilter)
+			.typeId(string2Uuid(schemaAssetTypeId))
+			.domainId(phyDataDicDomain.getId())
+			.build()
+			)
+
+	def schemaAssetId = schemaAsset.getId()
+
+	def schemDef = schemaDefinition.toString().replace("&nbsp;"," ")
+	addAttribute(schemaAssetId,string2Uuid(schemaDefinitionAttrTypeId),schemDef.replaceAll("\\<.*?\\>", ""))
+	addAttribute(schemaAssetId,string2Uuid(primaryKeysAttrTypeId),primaryKeys.toString().trim().replaceAll("\\s+", " "))
+	addAttribute(schemaAssetId,string2Uuid(dataSourceTypeAttrTypeId),'Avro')
+
+
+	relationApi.addRelation(
+			AddRelationRequest.builder()
+			.sourceId(dataSetAssetId)
+			.typeId(string2Uuid(dataSetContainsDataSourceSchemaRelTypeId))
+			.targetId(schemaAssetId)
+			.build()
+			)
+
+}
+
+/*name prefix relation*/
+relationApi.addRelation(
+		AddRelationRequest.builder()
+		.sourceId(dataSetAssetId)
+		.typeId(string2Uuid(dataAssetCheckedOutByEverestProdRelTypeId))
+		.targetId(string2Uuid(epsProducerName))
+		.build()
+		)
+/*Instance Relation*/
+relationApi.addRelation(
+		AddRelationRequest.builder()
+		.sourceId(dataSetAssetId)
+		.typeId(string2Uuid(dataAssetUtilizePipelineRelTypeId))
+		.targetId(string2Uuid(instanceName))
+		.build()
+		)
+
+
+def datasetdomain = domainApi.getDomain(string2Uuid(item.getVocabulary())).getId()
+loggerApi.info("datasetdomain ===========>"+datasetdomain)
+
+
+execution.setVariable('datasetdomain',uuid2String(datasetdomain))
+]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow60" name="No Error" sourceRef="exclusivegateway9" targetRef="servicetask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${isError == false}]]></conditionExpression>
+    </sequenceFlow>
+    <userTask id="usertask8" name="Failed  To Data Set Creation" activiti:candidateUsers="user(${startUser})">
+      <documentation>Check below error, for more information, check databook console -&gt; Data Governance Centre Node -&gt; Logs -&gt; dgc.log file  &lt;br&gt;&lt;br&gt; ${errorMessage}</documentation>
+    </userTask>
+    <sequenceFlow id="flow61" name="Error" sourceRef="exclusivegateway9" targetRef="usertask8">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${isError == true}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow62" sourceRef="usertask8" targetRef="endevent6"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway10" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow64" sourceRef="scripttask2" targetRef="exclusivegateway10"></sequenceFlow>
+    <userTask id="usertask9" name="Failed  To Data Set Creation" activiti:candidateUsers="user(${startUser})">
+      <documentation>Check below error, for more information, check databook console -&gt; Data Governance Centre Node -&gt; Logs -&gt; dgc.log file  &lt;br&gt;&lt;br&gt; ${errorMessage}</documentation>
+    </userTask>
+    <sequenceFlow id="flow65" name="Error" sourceRef="exclusivegateway10" targetRef="usertask9">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${isError == true}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow66" name="No Error" sourceRef="exclusivegateway10" targetRef="endevent7">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${isError == false}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow67" sourceRef="usertask9" targetRef="endevent7"></sequenceFlow>
+    <userTask id="usertask10" name="DataSet Already Exists" activiti:candidateUsers="user(${startUser})">
+      <documentation>&lt;b&gt;&lt;a href="${redirectUrl}"&gt;Click here to navigate to the data set&lt;/a&gt;&lt;/b&gt;</documentation>
+    </userTask>
+    <sequenceFlow id="flow68" sourceRef="exclusivegateway5" targetRef="usertask10">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${dataSetExists == true}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow69" sourceRef="usertask10" targetRef="usertask2"></sequenceFlow>
+    <sequenceFlow id="flow70" sourceRef="servicetask1" targetRef="endevent6"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway11" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow71" sourceRef="usertask2" targetRef="exclusivegateway11"></sequenceFlow>
+    <endEvent id="endevent8" name="End"></endEvent>
+    <sequenceFlow id="flow72" sourceRef="exclusivegateway11" targetRef="endevent8">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${cancel}]]></conditionExpression>
+    </sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Collaboration">
+    <bpmndi:BPMNPlane bpmnElement="Collaboration" id="BPMNPlane_Collaboration">
+      <bpmndi:BPMNShape bpmnElement="dsrDescribeDataSet" id="BPMNShape_dsrDescribeDataSet">
+        <omgdc:Bounds height="461.0" width="1491.0" x="50.0" y="20.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="lane1" id="BPMNShape_lane1">
+        <omgdc:Bounds height="461.0" width="1471.0" x="70.0" y="20.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="100.0" y="130.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask1" id="BPMNShape_scripttask1">
+        <omgdc:Bounds height="55.0" width="131.0" x="184.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask2" id="BPMNShape_usertask2">
+        <omgdc:Bounds height="55.0" width="133.0" x="548.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask3" id="BPMNShape_usertask3">
+        <omgdc:Bounds height="55.0" width="105.0" x="314.0" y="240.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent4" id="BPMNShape_endevent4">
+        <omgdc:Bounds height="35.0" width="35.0" x="410.0" y="340.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask1" id="BPMNShape_servicetask1">
+        <omgdc:Bounds height="55.0" width="131.0" x="1085.0" y="360.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask4" id="BPMNShape_scripttask4">
+        <omgdc:Bounds height="55.0" width="105.0" x="784.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway5" id="BPMNShape_exclusivegateway5">
+        <omgdc:Bounds height="40.0" width="40.0" x="920.0" y="127.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway6" id="BPMNShape_exclusivegateway6">
+        <omgdc:Bounds height="40.0" width="40.0" x="1000.0" y="127.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent6" id="BPMNShape_endevent6">
+        <omgdc:Bounds height="35.0" width="35.0" x="1408.0" y="370.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway7" id="BPMNShape_exclusivegateway7">
+        <omgdc:Bounds height="40.0" width="40.0" x="462.0" y="127.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask7" id="BPMNShape_usertask7">
+        <omgdc:Bounds height="55.0" width="105.0" x="430.0" y="240.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundarytimer2" id="BPMNShape_boundarytimer2">
+        <omgdc:Bounds height="30.0" width="30.0" x="506.0" y="278.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway8" id="BPMNShape_exclusivegateway8">
+        <omgdc:Bounds height="40.0" width="40.0" x="346.0" y="127.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask2" id="BPMNShape_scripttask2">
+        <omgdc:Bounds height="55.0" width="105.0" x="1110.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway9" id="BPMNShape_exclusivegateway9">
+        <omgdc:Bounds height="40.0" width="40.0" x="1130.0" y="237.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent7" id="BPMNShape_endevent7">
+        <omgdc:Bounds height="35.0" width="35.0" x="1263.0" y="40.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask5" id="BPMNShape_scripttask5">
+        <omgdc:Bounds height="55.0" width="105.0" x="968.0" y="230.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask8" id="BPMNShape_usertask8">
+        <omgdc:Bounds height="55.0" width="118.0" x="1367.0" y="230.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway10" id="BPMNShape_exclusivegateway10">
+        <omgdc:Bounds height="40.0" width="40.0" x="1260.0" y="128.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask9" id="BPMNShape_usertask9">
+        <omgdc:Bounds height="55.0" width="105.0" x="1345.0" y="121.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask10" id="BPMNShape_usertask10">
+        <omgdc:Bounds height="55.0" width="105.0" x="888.0" y="50.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway11" id="BPMNShape_exclusivegateway11">
+        <omgdc:Bounds height="40.0" width="40.0" x="720.0" y="130.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent8" id="BPMNShape_endevent8">
+        <omgdc:Bounds height="35.0" width="35.0" x="723.0" y="206.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="135.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="184.0" y="147.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow22" id="BPMNEdge_flow22">
+        <omgdi:waypoint x="366.0" y="295.0"></omgdi:waypoint>
+        <omgdi:waypoint x="427.0" y="340.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow38" id="BPMNEdge_flow38">
+        <omgdi:waypoint x="760.0" y="150.0"></omgdi:waypoint>
+        <omgdi:waypoint x="784.0" y="147.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow40" id="BPMNEdge_flow40">
+        <omgdi:waypoint x="889.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="920.0" y="147.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow41" id="BPMNEdge_flow41">
+        <omgdi:waypoint x="960.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1000.0" y="147.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow44" id="BPMNEdge_flow44">
+        <omgdi:waypoint x="1040.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1110.0" y="147.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="76.0" x="1030.0" y="129.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow45" id="BPMNEdge_flow45">
+        <omgdi:waypoint x="1020.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1020.0" y="230.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="100.0" x="994.0" y="180.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow47" id="BPMNEdge_flow47">
+        <omgdi:waypoint x="940.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="939.0" y="261.0"></omgdi:waypoint>
+        <omgdi:waypoint x="614.0" y="261.0"></omgdi:waypoint>
+        <omgdi:waypoint x="614.0" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow49" id="BPMNEdge_flow49">
+        <omgdi:waypoint x="502.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="548.0" y="147.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow50" id="BPMNEdge_flow50">
+        <omgdi:waypoint x="482.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="482.0" y="240.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow51" id="BPMNEdge_flow51">
+        <omgdi:waypoint x="482.0" y="295.0"></omgdi:waypoint>
+        <omgdi:waypoint x="427.0" y="340.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow53" id="BPMNEdge_flow53">
+        <omgdi:waypoint x="315.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="346.0" y="147.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow54" id="BPMNEdge_flow54">
+        <omgdi:waypoint x="366.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="366.0" y="240.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow55" id="BPMNEdge_flow55">
+        <omgdi:waypoint x="386.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="462.0" y="147.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow56" id="BPMNEdge_flow56">
+        <omgdi:waypoint x="521.0" y="308.0"></omgdi:waypoint>
+        <omgdi:waypoint x="427.0" y="340.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow26" id="BPMNEdge_flow26">
+        <omgdi:waypoint x="1073.0" y="257.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1130.0" y="257.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow60" id="BPMNEdge_flow60">
+        <omgdi:waypoint x="1150.0" y="277.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1150.0" y="360.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="40.0" x="1142.0" y="310.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow61" id="BPMNEdge_flow61">
+        <omgdi:waypoint x="1170.0" y="257.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1367.0" y="257.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="24.0" x="1170.0" y="257.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow62" id="BPMNEdge_flow62">
+        <omgdi:waypoint x="1426.0" y="285.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1425.0" y="370.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow64" id="BPMNEdge_flow64">
+        <omgdi:waypoint x="1215.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1260.0" y="148.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow65" id="BPMNEdge_flow65">
+        <omgdi:waypoint x="1300.0" y="148.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1345.0" y="148.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="24.0" x="1300.0" y="148.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow66" id="BPMNEdge_flow66">
+        <omgdi:waypoint x="1280.0" y="128.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1280.0" y="75.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="40.0" x="1260.0" y="81.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow67" id="BPMNEdge_flow67">
+        <omgdi:waypoint x="1397.0" y="121.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1397.0" y="57.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1298.0" y="57.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow68" id="BPMNEdge_flow68">
+        <omgdi:waypoint x="940.0" y="127.0"></omgdi:waypoint>
+        <omgdi:waypoint x="940.0" y="105.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow69" id="BPMNEdge_flow69">
+        <omgdi:waypoint x="888.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="615.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="614.0" y="120.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow70" id="BPMNEdge_flow70">
+        <omgdi:waypoint x="1216.0" y="387.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1408.0" y="387.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow71" id="BPMNEdge_flow71">
+        <omgdi:waypoint x="681.0" y="147.0"></omgdi:waypoint>
+        <omgdi:waypoint x="720.0" y="150.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow72" id="BPMNEdge_flow72">
+        <omgdi:waypoint x="740.0" y="170.0"></omgdi:waypoint>
+        <omgdi:waypoint x="740.0" y="206.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

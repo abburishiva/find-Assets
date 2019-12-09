@@ -1,0 +1,2159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <collaboration id="Collaboration">
+    <participant id="dsr_Describe_Data_Offering" name="DSR - Describe Data Offering" processRef="dsrDescribeDataOffering"></participant>
+  </collaboration>
+  <process id="dsrDescribeDataOffering" name="DSR - Describe Data Offering" isExecutable="true">
+    <documentation>This workflow used to create data offering</documentation>
+    <laneSet id="laneSet_dsrDescribeDataOffering">
+      <lane id="lane1">
+        <flowNodeRef>startevent1</flowNodeRef>
+        <flowNodeRef>usertask1</flowNodeRef>
+        <flowNodeRef>scripttask2</flowNodeRef>
+        <flowNodeRef>scripttask1</flowNodeRef>
+        <flowNodeRef>exclusivegateway1</flowNodeRef>
+        <flowNodeRef>exclusivegateway2</flowNodeRef>
+        <flowNodeRef>usertask2</flowNodeRef>
+        <flowNodeRef>endevent2</flowNodeRef>
+        <flowNodeRef>servicetask1</flowNodeRef>
+        <flowNodeRef>scripttask4</flowNodeRef>
+        <flowNodeRef>usertask3</flowNodeRef>
+        <flowNodeRef>boundarytimer1</flowNodeRef>
+        <flowNodeRef>endevent4</flowNodeRef>
+        <flowNodeRef>exclusivegateway5</flowNodeRef>
+        <flowNodeRef>servicetask2</flowNodeRef>
+        <flowNodeRef>usertask4</flowNodeRef>
+        <flowNodeRef>boundarytimer2</flowNodeRef>
+        <flowNodeRef>exclusivegateway6</flowNodeRef>
+        <flowNodeRef>exclusivegateway6</flowNodeRef>
+        <flowNodeRef>scripttask5</flowNodeRef>
+        <flowNodeRef>exclusivegateway7</flowNodeRef>
+        <flowNodeRef>usertask5</flowNodeRef>
+        <flowNodeRef>exclusivegateway8</flowNodeRef>
+        <flowNodeRef>exclusivegateway9</flowNodeRef>
+        <flowNodeRef>endevent5</flowNodeRef>
+        <flowNodeRef>scripttask8</flowNodeRef>
+        <flowNodeRef>scripttask9</flowNodeRef>
+        <flowNodeRef>exclusivegateway10</flowNodeRef>
+        <flowNodeRef>endevent6</flowNodeRef>
+        <flowNodeRef>exclusivegateway11</flowNodeRef>
+        <flowNodeRef>usertask6</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="startevent1" name="Start" activiti:initiator="startUser">
+      <extensionElements>
+        <activiti:formProperty id="descriptionAttrId" name="please enter UUid of 'descriptionAttrId'" type="string" default="00000000-0000-0000-0000-000000003114" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="consumableAttrId" name="please enter Uuid 'Consumable Attr Id'" type="string" default="9640bf36-2b4f-4b1a-a3ba-03f52e5f1466" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="publicationModeAttrId" name="please enter Uuid 'Publication Mode Attr Id'" type="string" default="95f5d934-a900-4fb9-bc07-7951371e8bf6" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="slaOffsetDaysAttrId" name="please enter 'slaOffsetDaysAttrId'" type="string" default="205d5984-4a67-433c-b7a5-7f394c81ed15" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="slaArrivalTimeAttrId" name="please enter Uuid of 'SLA Arrival Time'" type="string" default="cac39efb-ade1-484d-9b48-a374bfe2972b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="slaCalenderAttrId" name="please enter Uuid of 'slaCalender'" type="string" default="3ce0a59e-7ad5-4799-bd5f-15821c5318f5" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="contactEmailAttrId" name="Please Enter &quot;contactEmailAttrId&quot;" type="string" default="27595c98-199c-4e5f-bb67-498404765750" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataOfferingAssetTypeId" name="Please Enter &quot;dataOfferingAssetTypeId&quot;" type="string" default="f9a31319-eb7f-45df-a871-8bd55c9c51a2" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataSetContainsDataOfferingRelTypeId" name="Please Enter &quot;dataSetContainsDataOfferingRelTypeId&quot;" type="string" default="d24ef965-370b-41e0-8d2f-e26c969dc891" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="changeTicketAttrTypeId" name="Please Enter &quot;changeTicketAttrTypeId&quot;" type="string" default="b44d89c7-f6c3-414a-8917-ba8c28d90e4f" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataOfferingMilestoneByMilestoneFieldRelTypeId" name="Please Enter &quot;dataOfferingMilestoneByMilestoneFieldRelTypeId&quot;" type="string" default="6c2b1fdd-5856-44d1-83d7-7c3384d25e80" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="candidateStatusTypeId" name="Please Select &quot;candidateStatusTypeId&quot;" type="string" default="00000000-0000-0000-0000-000000005008" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="epsProducerNameAttrTypeId" name="Please Enter &quot;epsProducerNameAttrTypeId&quot;" type="string" default="1fe65bc0-8e47-419b-b0f8-c0087251f78a" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="milestoneFieldAssetTypeId" name="Please Enter &quot;milestoneFieldAssetTypeId&quot;" type="string" default="0be2b975-ef68-4967-9608-369eade8bc49" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="epsProducerDomainId" name="Please Enter &quot;epsProducerDomainId&quot;" type="string" default="426a7110-8ee2-44c1-9810-7ddb5f624e83" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="instanceNameAttrTypeId" name="Please Enter &quot;instanceNameAttrTypeId&quot;" type="string" default="b31b1219-2266-4d28-9e97-9446d826fa4b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="codeValueTypeId" name="Please Enter &quot;codeValueTypeId&quot;" type="string" default="00000000-0000-0000-0000-000000021001" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="slaArrivalTimeDomainId" name="Please Enter &quot;slaArrivalTimeDomainId&quot;" type="string" default="c09a3bb6-251a-4fde-b1c1-8bc16a0b61c0" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="slaOffsetDaysDomainId" name="Please Enter &quot;slaOffsetDaysDomainId&quot;" type="string" default="db8d576b-d315-476a-a80b-2748524a443b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="slaCalendarDomainId" name="Please enter 'slaCalendarDomainId'" type="string" default="b86c5dc9-5175-40fa-889a-e2ae43dccd6b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="storagePlatformAttrTypeId" name="Please enter 'storagePlatformAttrTypeId'" type="string" default="8cbc31a9-4460-4e54-baa3-03d699217fee" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataSetContainsSchemaRelTypeId" name="Please enter 'dataSetContainsSchemaRelTypeId'" type="string" default="913b4d30-3295-4248-8eeb-c73c9041464d" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="physicalDataDictionariesCommunityName" name="Please enter 'physicalDataDictionariesCommunityName'" type="string" default="Physical Data Dictionaries" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="physicalDataDictionaryDomainTypeId" name="Please enter 'physicalDataDictionaryDomainTypeId'" type="string" default="00000000-0000-0000-0000-000000030011" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="schemaAssetTypeId" name="Please enter 'schemaAssetTypeId'" type="string" default="00000000-0000-0000-0001-000400000002" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="schemaDefinitionAttrTypeId" name="Please enter 'schemaDefinitionAttrTypeId'" type="string" default="e1ca89dc-df3b-41b2-99ea-0e75f3ff26e4" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="primaryKeysAttrTypeId" name="Please enter 'primaryKeysAttrTypeId'" type="string" default="a3138dea-815a-492f-a840-ebc744ee10ac" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataSourceTypeAttrTypeId" name="Please enter 'dataSourceTypeAttrTypeId'" type="string" default="00000000-0000-0000-0001-000500000018" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataOfferingGroupsSchemasRelId" name="Please enter 'dataOfferingGroupsSchemasRelId'" type="string" default="3d4e97f7-4c96-40b3-8150-8b2041e1bf99" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="avroSchemaAttrTypeId" name="Please enter 'avroSchemaAttrTypeId'" type="string" default="53bdeb27-8333-4dda-a20a-17f158a95e70" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="avroSchemaPrimaryKeyAttrTypeId" name="Please enter 'avroSchemaPrimaryKeyAttrTypeId'" type="string" default="a3138dea-815a-492f-a840-ebc744ee10ac" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="schemaContainsTableRelTypeId" name="Please enter 'schemaContainsTableRelTypeId'" type="string" default="00000000-0000-0000-0000-000000007043" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="columnPartOfTableRelTypeId" name="Please enter 'columnPartOfTableRelTypeId'" type="string" default="00000000-0000-0000-0000-000000007042" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataOfferingGroupsTableRelTypeId" name="Please enter 'dataOfferingGroupsTableRelTypeId'" type="string" default="34a5ce80-73a7-487e-94ab-fc77249344db" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataOfferingGroupsFieldColumnRelTypeId" name="Please enter 'dataOfferingGroupsFieldColumnRelTypeId'" type="string" default="286fae84-2ccc-4e4b-ba2a-880484e1de61" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="instanceDevelopmentDomainId" name="Please enter 'instanceDevelopmentDomainId'" type="string" default="c7daem147-2ad2-44be-88e7-deededc157dd" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="everestAssetTypeId" name="Please enter 'everestAssetTypeId'" type="string" default="fe243d82-6b8d-4c68-8ab4-0c74477af856" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataOfferinginContainsEverestProducerRelTypeId" name="Please enter 'dataOfferinginContainsEverestProducerRelTypeId'" type="string" default="964d456f-e81c-4e7f-bdf7-01d7069b589d" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="hummingBirdInstanceName" name="Please Enter &quot;hummingBirdInstanceName&quot;" type="string" default="Hummingbird" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="environmentAttributTypeId" name="Please enter 'environmentAttributTypeId'" type="string" default="b31b1219-2266-4d28-9e97-9446d826fa4b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="storageDomainTypeId" name="Please enter 'storageDomainTypeId'" type="string" default="17896289-3112-45dc-98ff-dda5ca4c5689" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="dataAssetUtilizePipelineRelTypeId" name="Please enter 'dataAssetUtilizePipelineRelTypeId'" type="string" default="81928df8-f0eb-414c-9a19-3883620fdc7e" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="sealApplicationDomainId" name="Please enter  &quot;sealApplicationDomainId&quot; " type="string" default="cd49519b-c03b-4723-874f-707e7f58e61b" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="applicationIdAttrTyprId" name="Please enter &quot;applicationIdAttrTyprId&quot;" type="string" default="646b388c-3a8f-421d-a3a4-23cd3181d395" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="applicatioAssetTypeId" name="Please enter &quot;applicatioAssetTypeId&quot;" type="string" default="a65a6a5e-2176-4020-a8fd-a0c94189ba64" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="datasetProducedByApplicationRelTypeId" name="Please enter &quot;datasetProducedByApplicationRelTypeId&quot;" type="string" default="e34d6070-0fc2-4181-a4f7-23d0d43c4abf" readable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="fromWorkflow" name="fromWorkflow" type="boolean" default="false" readable="false" required="true"></activiti:formProperty>
+      </extensionElements>
+    </startEvent>
+    <userTask id="usertask1" name="Data Offering Metadata Form" activiti:candidateUsers="user(${startUser})">
+      <documentation>Please provide all the required metadata for Data Offering
+${validationMsg}</documentation>
+      <extensionElements>
+        <activiti:formProperty id="name" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Name &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;dataOfferingColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;dataOffering()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;dataOfferingHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Provide Data Offering Name &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function dataOffering() {var y = document.getElementsByClassName(&quot;dataOfferingColor&quot;);var x = document.getElementsByClassName(&quot;dataOfferingHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}setTimeout(function() {for (var i = 0;i &lt; document.getElementsByName(&quot;name&quot;).length;i++) {var x = document.getElementsByName(&quot;name&quot;)[i].parentNode;var formValue = x.parentNode;var formWrapper = formValue.parentNode;var modalContent = formWrapper.parentNode;var modalDialog = modalContent.parentNode;modalDialog.classList.add(&quot;custom-doffering-modal&quot;);}}, 0);&lt;/script&gt;&lt;style&gt; .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.modalwindow.custom-doffering-modal {margin-left: -45% !important;width: 90% !important;min-height: 100px !important;height: auto !important;top: 40px !important;}.form-wrapper {max-height: fit-content;}&lt;/style&gt;" type="string" required="true"></activiti:formProperty>
+        <activiti:formProperty id="namePrefix" name=" &lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Name Prefix &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;namePrefixColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;namePrefix()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;namePrefixHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt; Name Prefix Of Data Set &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function namePrefix() {var y = document.getElementsByClassName(&quot;namePrefixColor&quot;);var x = document.getElementsByClassName(&quot;namePrefixHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="term" default="${epsProducerId}" writable="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="description" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Description &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;descriptionColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;description()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;descriptionHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Provide Description &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function description() {var y = document.getElementsByClassName(&quot;descriptionColor&quot;);var x = document.getElementsByClassName(&quot;descriptionHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="plainText" required="true"></activiti:formProperty>
+        <activiti:formProperty id="consumable" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Consumable &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;consumableColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;consumable()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;consumableHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Select either True or False &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function consumable() {var y = document.getElementsByClassName(&quot;consumableColor&quot;);var x = document.getElementsByClassName(&quot;consumableHelpText&quot;);for(var i = 0;i &lt; x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="boolean" required="true">
+          <activiti:value id="True" name="True"></activiti:value>
+          <activiti:value id="False" name="False"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="publicationMode" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Publication Mode &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;publicationColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;publication()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;publicationHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Select Mode type &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function publication() {var y = document.getElementsByClassName(&quot;publicationColor&quot;);var x = document.getElementsByClassName(&quot;publicationHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="dynamicEnum" required="true">
+          <activiti:value id="dynamicValuesExpression" name="${publicationModeValuesMap}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="contacteMail" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Contact Email &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;contactMailColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;contactMail()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;contactMailHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Provide Contact E-Mail &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function contactMail() {var y = document.getElementsByClassName(&quot;contactMailColor&quot;);var x = document.getElementsByClassName(&quot;contactMailHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="string" default="${contactEmailValue}" required="true"></activiti:formProperty>
+        <activiti:formProperty id="instanceName" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Instance Name &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;instanceNameColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;instanceName()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;instanceNameHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Select Instance Name &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function instanceName() {var y = document.getElementsByClassName(&quot;instanceNameColor&quot;);var x = document.getElementsByClassName(&quot;instanceNameHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="dynamicEnum" default="${defaultInstanceName}" writable="false">
+          <activiti:value id="dynamicValuesExpression" name="${instanceNameValuesMap}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="slaCalendar" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Service Level Agreement - Calendar &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;slaCalendarColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;slaCalendar()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;slaCalendarHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt; Select which day you want &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function slaCalendar() {var y = document.getElementsByClassName(&quot;slaCalendarColor&quot;);var x = document.getElementsByClassName(&quot;slaCalendarHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="dynamicEnum" required="true">
+          <activiti:value id="dynamicValuesExpression" name="${slaCalendarMap}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="slaArrivalTime" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Service Level Agreement - Arrival Time &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;slaArrivalColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;slaArrival()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;slaArrivalHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Provide Arrival Time &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function slaArrival() {var y = document.getElementsByClassName(&quot;slaArrivalColor&quot;);var x = document.getElementsByClassName(&quot;slaArrivalHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="dynamicEnum" required="true">
+          <activiti:value id="dynamicValuesExpression" name="${slaArrivalTimeMap}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="slaOffsetDays" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Service Level Agreement - Offset Days &lt;b style=&quot;color:red;&quot;&gt;*&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;slaOffsetColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;slaOffset()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;slaOffsetHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Provide how many offset days &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function slaOffset() {var y = document.getElementsByClassName(&quot;slaOffsetColor&quot;);var x = document.getElementsByClassName(&quot;slaOffsetHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="dynamicEnum" required="true">
+          <activiti:value id="dynamicValuesExpression" name="${slaOffsetDaysMap}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="mileStoneByMilestoneField" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Milestone By Milestone Field &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;milestoneColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;milestone()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;milestoneHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Select Milestone Field Milestone of Data Offering &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function milestone() {var y = document.getElementsByClassName(&quot;milestoneColor&quot;);var x = document.getElementsByClassName(&quot;milestoneHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="term">
+          <activiti:value id="conceptType" name="0be2b975-ef68-4967-9608-369eade8bc49"></activiti:value>
+          <activiti:value id="statusId" name="6057d22c-a68b-447a-b1b5-a1d782ef52cc"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="selectedSchemaList" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Schema &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; schemaColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; schema()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; schemaHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt; Select Schema(s) &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function schema() {var y = document.getElementsByClassName(&quot; schemaColor&quot;);var x = document.getElementsByClassName(&quot; schemaHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="term">
+          <activiti:value id="multiValue" name="true"></activiti:value>
+          <activiti:value id="proposedValues" name="${schemaList}"></activiti:value>
+          <activiti:value id="proposedFixed" name="true"></activiti:value>
+          <activiti:value id="helpText" name="${noSchema}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="schemaName" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Avro Schema Name &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;avroSchemaName&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;avroSchemaName()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;avroSchemaNameHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Please Provide Avro Schema Name &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function avroSchemaName() {var y = document.getElementsByClassName(&quot;avroSchemaName&quot;);var x = document.getElementsByClassName(&quot;avroSchemaNameHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="string"></activiti:formProperty>
+        <activiti:formProperty id="schemaDefinition" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Avro Schema Definition &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; schemaDefColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; schemaDef()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; schemaDefHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt; Provide Schema Definition &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function schemaDef() {var y = document.getElementsByClassName(&quot; schemaDefColor&quot;);var x = document.getElementsByClassName(&quot; schemaDefHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="plainText"></activiti:formProperty>
+        <activiti:formProperty id="primaryKeys" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt;Avro Primary Keys &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; primaryKeysColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; primaryKeys()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; primaryKeysHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt; Provide Primary Keys &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function primaryKeys() {var y = document.getElementsByClassName(&quot; primaryKeysColor&quot;);var x = document.getElementsByClassName(&quot; primaryKeysHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="plainText"></activiti:formProperty>
+        <activiti:formProperty id="alternateSchemaLocation" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Alternate Schema Location &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; entityURIColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot; entityURI()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot; entityURIHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;URL of Alternative Model Registery when Databook Firmwide Model registry is not being used &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function entityURI() {var y = document.getElementsByClassName(&quot; entityURIColor&quot;);var x = document.getElementsByClassName(&quot; entityURIHelpText&quot;);for(var i=0;i&lt;x.length;i++){if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="string"></activiti:formProperty>
+        <activiti:formProperty id="selectAllTablesAndColumns" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Do you want to select all tables and columns? &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;selectAllTables&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;selectAllTables()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;selectAllTablesHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Please Select Yes or No &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function selectAllTables() {var y = document.getElementsByClassName(&quot;selectAllTables&quot;);var x = document.getElementsByClassName(&quot;selectAllTablesHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}&lt;/script&gt;" type="enum" default="none">
+          <activiti:value id="none" name="-"></activiti:value>
+          <activiti:value id="Yes" name="Yes"></activiti:value>
+          <activiti:value id="No" name="No"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="storagePlatform" name="&lt;div style=&quot;overflow: hidden;&quot;&gt;&lt;p style=&quot;float:left;&quot;&gt; Select Technology Storage Platform &lt;b style=&quot;color:red;&quot;&gt;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;selectTechColor&quot; style=&quot;float:left;padding: 0 1%;cursor:pointer&quot; onclick=&quot;selectTech()&quot;&gt;&lt;b style=&quot;position:relative;float:left;font-size:18px;&quot;&gt;&amp;#9432;&lt;/b&gt;&lt;/p&gt;&lt;p class=&quot;selectTechHelpText&quot; style=&quot;display: none;float:left;background-color:#4CAF50;color:white;border-radius:8px 8px 8px 0px;padding:5px;position:relative;bottom:10px&quot;&gt;Select Storage Platform &lt;/p&gt;&lt;/div&gt;&lt;script&gt; function selectTech() {var y = document.getElementsByClassName(&quot;selectTechColor&quot;);var x = document.getElementsByClassName(&quot;selectTechHelpText&quot;);for (var i = 0;i &lt; x.length;i++) {if (x[i].style.display === &quot;none&quot;) {x[i].style.display = &quot;block&quot;;y[i].style.color = '#008902';}else {x[i].style.display = &quot;none&quot;;y[i].style.color = '#8C8C8C';}}}setTimeout(function() {for (var i = 0;i &lt; document.getElementsByName(&quot;storagePlatform&quot;).length;i++) {var x = document.getElementsByName(&quot;storagePlatform&quot;)[i].parentNode;var formValue = x.parentNode;var formWrapper = formValue.parentNode;var modalContent = formWrapper.parentNode;var modalDialog = modalContent.parentNode;modalDialog.classList.add(&quot;custom-splatform-modal&quot;);}}, 0);&lt;/script&gt;&lt;style&gt; .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.modalwindow.custom-splatform-modal {margin-left: -45% !important;width: 90% !important;min-height: 100px !important;height: auto !important;top: 40px !important;}.form-wrapper {max-height: fit-content;}&lt;/style&gt;" type="dynamicEnum">
+          <activiti:value id="dynamicValuesExpression" name="${storagePlatformValuesMap}"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="nextflowbtn" name="Next" type="button" default="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="submit" name="Save and Close" type="button" default="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="cancel" name="Cancel" type="button" default="false"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <scriptTask id="scripttask2" name="Create Data Offering Metadata" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.component.instance.CommunityApi
+import com.collibra.dgc.core.api.component.instance.DomainApi
+import com.collibra.dgc.core.api.component.logger.LoggerApi
+import com.collibra.dgc.core.api.dto.instance.asset.AddAssetRequest
+import com.collibra.dgc.core.api.dto.instance.asset.ChangeAssetRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.AddAttributeRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.FindAttributesRequest
+import com.collibra.dgc.core.api.dto.instance.relation.AddRelationRequest
+import com.collibra.dgc.core.api.dto.instance.community.FindCommunitiesRequest
+import com.collibra.dgc.core.api.dto.instance.domain.AddDomainRequest
+import com.collibra.dgc.core.api.dto.MatchMode
+import com.collibra.dgc.core.api.dto.instance.relation.FindRelationsRequest
+import com.collibra.dgc.core.api.dto.instance.domain.FindDomainsRequest
+import com.collibra.dgc.core.api.component.instance.RelationApi
+
+
+def addAttribute = { assetId, typeId, value ->
+	attributeApi.addAttribute(
+			AddAttributeRequest.builder()
+			.assetId(assetId)
+			.typeId(typeId)
+			.value(value)
+			.build()
+			)
+}
+
+
+def addAsset = { name, typeId, displayName, domainId, statusId ->
+	assetApi.addAsset(
+			AddAssetRequest.builder()
+			.name(name)
+			.typeId(typeId)
+			.displayName(displayName)
+			.domainId(domainId)
+			.status(statusId)
+			.build()
+			)
+}
+
+def addRelation = {sourceId, targetId, relationtypeId ->
+	relationApi.addRelation(
+			AddRelationRequest.builder()
+			.sourceId(sourceId)
+			.targetId(targetId)
+			.typeId(relationtypeId)
+			.build()
+			)
+}
+def findDomain(name, nameMatchMode, typeId, communityId) {
+	return domainApi.findDomains(FindDomainsRequest.builder()
+			.name(name)
+			.nameMatchMode(nameMatchMode)
+			.typeId(typeId)
+			.communityId(communityId)
+			.build()
+			).getResults()
+}
+def findSchemaNameAvro(communityId, schemaName) {
+	return domainApi.findDomains(
+			FindDomainsRequest.builder()
+			.name(schemaName)
+			.nameMatchMode(MatchMode.ANYWHERE)
+			.communityId(communityId)
+			.build()
+			).getResults()
+}
+
+def isError = false
+def errorMessage
+
+try {
+
+	// Getting the Community Name for splitting the LOB
+	def communityName = communityApi.getCommunity(string2Uuid(item.getCommunity())).getName()
+	loggerApi.info('communityName-->'+communityName)
+
+	def LOB= communityName.split(' -')[0]
+	loggerApi.info('comShortname-->'+LOB)
+	execution.setVariable('LOB',LOB)
+
+	//Getting the Data Set Name
+	def dataSetName = assetApi.getAsset(string2Uuid(selectedDatset)).getName()
+	loggerApi.info('dataSetName'+dataSetName)
+
+	def domainId = string2Uuid(item.id)
+	loggerApi.info('domainId--->'+domainId)
+
+	def domainName =  item.getName()
+	loggerApi.info('domainName--->'+domainName)
+
+	//Getting the sealid from the Domain
+	def sealId = domainName.split(' -')[0]
+	loggerApi.info('sealId-->'+sealId)
+
+	//Finding the value of EPS Producer Attribute from the Data Set
+	def typeIds = []
+	typeIds.add(string2Uuid(epsProducerNameAttrTypeId))
+
+	def epsproducerAttr = attributeApi.findAttributes(
+			FindAttributesRequest.builder()
+			.typeIds(typeIds)
+			.assetId(string2Uuid(selectedDatset))
+			.build()
+			).getResults()
+
+	def epsProducerName = epsproducerAttr.get(0).getValue()
+	loggerApi.info('epsProducerName'+epsProducerName)
+	def offeringName = name.trim().replaceAll("\\s+", " ")
+
+	def dataOfferingAsset
+	def instanceNameChecking = ""
+	
+	loggerApi.info("instanceName==>"+instanceName)
+		
+	if(execution.getVariable("instanceName") != "") {
+		if(assetApi.getAsset(string2Uuid(instanceName)).getName() == hummingBirdInstanceName)
+		{
+		instanceNameChecking = ""
+		}
+		else
+		{
+			instanceNameChecking = "_"+assetApi.getAsset(string2Uuid(instanceName)).getName()
+		}
+	}
+	
+	// Adding the Data Offering Asset in the Data Set Registry Domain for CORP and Other LOB
+	if(LOB == "CORP" ) {
+		
+	 dataOfferingAsset = addAsset(epsProducerName+"-"+offeringName.replaceAll(" ", "") + instanceNameChecking ,string2Uuid(dataOfferingAssetTypeId),offeringName + instanceNameChecking,domainId,string2Uuid(candidateStatusTypeId))
+		
+		loggerApi.info('dataOfferingAsset-->'+dataOfferingAsset)
+	}
+	else {
+		
+	 dataOfferingAsset = addAsset(LOB+"."+sealId+"."+dataSetName+"-"+offeringName.replaceAll(" ", "") + instanceNameChecking ,string2Uuid(dataOfferingAssetTypeId),offeringName + instanceNameChecking,domainId,string2Uuid(candidateStatusTypeId))
+	
+		loggerApi.info('dataOfferingAsset-->'+dataOfferingAsset)
+	}
+	def dataOfferingAssetId = dataOfferingAsset.getId()
+	
+	// Adding the attributes to the Data Offering Asset
+	
+	def contacteMailTrim = contacteMail.trim().replaceAll("\\s+", "")
+	def desc = description.toString().replace("&nbsp;"," ")
+	
+	addAttribute(dataOfferingAssetId,string2Uuid(epsProducerNameAttrTypeId), epsProducerName)
+	addAttribute(dataOfferingAssetId,string2Uuid(descriptionAttrId),desc)
+	addAttribute(dataOfferingAssetId,string2Uuid(consumableAttrId),consumable.toString())
+	addAttribute(dataOfferingAssetId,string2Uuid(publicationModeAttrId),publicationMode)
+	if(execution.getVariable("slaArrivalTime") != "") {
+		loggerApi.info("i am here 1")
+		addAttribute(dataOfferingAssetId,string2Uuid(slaArrivalTimeAttrId),assetApi.getAsset(string2Uuid(slaArrivalTime)).getName())
+	}
+	if(execution.getVariable("slaOffsetDays") != "") {
+		loggerApi.info("i am here 2")
+		addAttribute(dataOfferingAssetId,string2Uuid(slaOffsetDaysAttrId),assetApi.getAsset(string2Uuid(slaOffsetDays)).getName())
+	}
+	if(execution.getVariable("slaCalender") != "" && !slaCalendar.isEmpty()) {
+		loggerApi.info("i am here 3"+slaCalendar)
+		addAttribute(dataOfferingAssetId,string2Uuid(slaCalenderAttrId),assetApi.getAsset(string2Uuid(slaCalendar)).getName())
+	}
+	loggerApi.info("i am here 4")
+	addAttribute(dataOfferingAssetId,string2Uuid(contactEmailAttrId),contacteMailTrim)
+	loggerApi.info("i am here 5")
+	if(execution.getVariable("instanceName") != "") {
+		//addAttribute(dataOfferingAssetId,string2Uuid(instanceNameAttrTypeId),instanceName)
+		//addRelation(dataOfferingAssetId,string2Uuid(instanceName), string2Uuid(dataOfferinginContainsEverestProducerRelTypeId))
+		/*def utilizePipeLineRels = relationApi.findRelations(
+					FindRelationsRequest.builder()
+					.sourceId(string2Uuid(item.id))
+					.relationTypeId(string2Uuid(dataAssetUtilizePipelineRelTypeId))
+					.build()
+					).getResults()
+		def removeUtilize = []
+		if(!utilizePipeLineRels.isEmpty()) {
+			removeUtilize.add(utilizePipeLineRels.get(0).getId())
+			relationApi.removeRelations(removeUtilize)
+		}*/
+		addRelation(dataOfferingAssetId,string2Uuid(instanceName), string2Uuid(dataAssetUtilizePipelineRelTypeId))
+	}
+
+	// Adding Relations to the Data Offering
+	loggerApi.info("i am here 2")
+	if(execution.getVariable("mileStoneByMilestoneField") != "") {
+		addRelation(dataOfferingAssetId,string2Uuid(mileStoneByMilestoneField), string2Uuid(dataOfferingMilestoneByMilestoneFieldRelTypeId))
+	}
+
+	
+	addRelation(string2Uuid(selectedDatset),dataOfferingAssetId, string2Uuid(dataSetContainsDataOfferingRelTypeId))
+
+	
+	def offeringRedirectUrl = applicationApi.getInfo().getBaseUrl()+'asset/'+uuid2String(dataOfferingAssetId)
+	
+	execution.setVariable('offeringRedirectUrl',offeringRedirectUrl)
+	execution.setVariable('dataOfferingAssetId',uuid2String(dataOfferingAssetId))
+	execution.setVariable('isError',isError)
+	
+	
+	
+	def parentCommunityId = communityApi.getCommunity(string2Uuid(item.getCommunity())).getParent().getId()
+	loggerApi.info('parent community --->'+parentCommunityId)
+
+	def phyDataDicComm = communityApi.findCommunities(
+		FindCommunitiesRequest.builder()
+		.name(physicalDataDictionariesCommunityName)
+		.nameMatchMode(MatchMode.ANYWHERE)
+		.parentId(parentCommunityId)
+		.build()
+		).getResults()
+		
+	loggerApi.info('phyDataDicComm --->'+phyDataDicComm)
+
+	def dataSetDomain = item.getName()
+
+	def dataSetDomainSealId = dataSetDomain.split('-')[0]
+
+	if(!schemaName.isEmpty() && schemaName != null && schemaDefinition != null && primaryKeys != null)
+	{
+	def schemaFilter = schemaName.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" ")
+	def phyDataDicDomain = domainApi.addDomain(
+		AddDomainRequest.builder()
+		.name(dataSetDomainSealId+'- '+schemaFilter)
+		.typeId(string2Uuid(physicalDataDictionaryDomainTypeId))
+		.communityId(phyDataDicComm.get(0).getId())
+		.build()
+		)
+		
+	loggerApi.info('phyDataDicDomain----> '+phyDataDicDomain)
+
+	def schemaAsset = assetApi.addAsset(
+		AddAssetRequest.builder()
+		.name(schemaFilter)
+		.typeId(string2Uuid(schemaAssetTypeId))
+		.domainId(phyDataDicDomain.getId())
+		.build()
+		)
+		
+		def schemaAssetId = schemaAsset.getId()
+		
+			def schemDef = schemaDefinition.toString().replace("&nbsp;"," ")
+			addAttribute(schemaAssetId,string2Uuid(schemaDefinitionAttrTypeId),schemDef.replaceAll("\\<.*?\\>", ""))
+			addAttribute(schemaAssetId,string2Uuid(primaryKeysAttrTypeId),primaryKeys.toString().trim().replaceAll("\\s+", " "))
+			addAttribute(schemaAssetId,string2Uuid(dataSourceTypeAttrTypeId),'Avro')
+			
+		
+	relationApi.addRelation(
+		AddRelationRequest.builder()
+		.sourceId(dataOfferingAssetId)
+		.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+		.targetId(schemaAssetId)
+		.build()
+		)
+	relationApi.addRelation(
+		AddRelationRequest.builder()
+		.sourceId(string2Uuid(selectedDatset))
+		.typeId(string2Uuid(dataSetContainsSchemaRelTypeId))
+		.targetId(schemaAssetId)
+		.build()
+		)
+
+	}
+	if(execution.getVariable("alternateSchemaLocation") != "")
+	{
+		def alternateSchema = alternateSchemaLocation.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" ")
+		
+		
+		
+		loggerApi.info('alternateSchema'+alternateSchema)
+		if(!alternateSchema.isEmpty()) {
+			
+			def checkDomain = findSchemaNameAvro(phyDataDicComm.get(0).getId(), dataSetDomainSealId+'- '+alternateSchema)
+			if(checkDomain.isEmpty()) {
+				def alterPhyDataDicDomain = domainApi.addDomain(
+					AddDomainRequest.builder()
+					.name(dataSetDomainSealId+'- '+alternateSchema)
+					.typeId(string2Uuid(physicalDataDictionaryDomainTypeId))
+					.communityId(phyDataDicComm.get(0).getId())
+					.build()
+					)
+				def alternateSchemaAsset = assetApi.addAsset(
+					AddAssetRequest.builder()
+					.name(alternateSchema)
+					.typeId(string2Uuid(schemaAssetTypeId))
+					.domainId(alterPhyDataDicDomain.getId())
+					.build()
+					)
+				addAttribute(alternateSchemaAsset.getId(),string2Uuid(dataSourceTypeAttrTypeId),'Avro')
+				relationApi.addRelation(
+					AddRelationRequest.builder()
+					.sourceId(dataOfferingAssetId)
+					.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+					.targetId(alternateSchemaAsset.getId())
+					.build()
+					)
+				relationApi.addRelation(
+					AddRelationRequest.builder()
+					.sourceId(string2Uuid(selectedDatset))
+					.typeId(string2Uuid(dataSetContainsSchemaRelTypeId))
+					.targetId(alternateSchemaAsset.getId())
+					.build()
+					)
+			}
+			
+		}
+	}
+	def tableAssets = []
+	if(selectAllTablesAndColumns == "Yes") {
+		
+		def avroSchemas=[]
+		def normalSchemas=[]
+		def avroTypeIds=[]
+		avroTypeIds.add(string2Uuid(avroSchemaAttrTypeId))
+		avroTypeIds.add(string2Uuid(avroSchemaPrimaryKeyAttrTypeId))
+		def attrFound
+		def avroSchemaAttr
+		
+		def schemas=utility.toList(selectedSchemaList)
+		for(schema in schemas) {
+			avroSchemaAttr=attributeApi.findAttributes(FindAttributesRequest.builder()
+					.typeIds(avroTypeIds)
+					.assetId(string2Uuid(schema))
+					.build()
+					).getResults()
+
+
+			loggerApi.info('attributes-->'+avroSchemaAttr)
+			if(!avroSchemaAttr.isEmpty()) {
+				avroSchemas.add(schema)
+			}
+			else {
+
+				normalSchemas.add(schema)
+			}
+		}
+		/*Normal schema Relation*/
+		for(schemaid in normalSchemas) {
+			def tableRels = relationApi.findRelations(
+					FindRelationsRequest.builder()
+					.sourceId(string2Uuid(schemaid))
+					.relationTypeId(string2Uuid(schemaContainsTableRelTypeId))
+					.build()
+					).getResults()
+			
+			/*Add schema relation to data offering*/
+			def groupsSchemaRelations =relationApi.findRelations(
+				FindRelationsRequest.builder()
+				.sourceId(dataOfferingAssetId)
+				.relationTypeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+				.targetId(string2Uuid(schemaid))
+				.build()
+				).getResults()
+
+			if(groupsSchemaRelations.isEmpty()) {
+				relationApi.addRelation(
+						AddRelationRequest.builder()
+						.sourceId(dataOfferingAssetId)
+						.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+						.targetId(string2Uuid(schemaid))
+						.build()
+						)
+			}
+			
+			def tabs=[]
+			for(tableRel in tableRels)
+			{
+				tableAssets.add(uuid2String(tableRel.getTarget().getId()))
+				
+				def findTabRel=relationApi.findRelations(
+						FindRelationsRequest.builder()
+						.sourceId(dataOfferingAssetId)
+						.relationTypeId(string2Uuid(dataOfferingGroupsTableRelTypeId))
+						.targetId(tableRel.getTarget().getId())
+						.build()
+						).getResults()
+				loggerApi.info('TableRelation-->'+findTabRel)
+				if(findTabRel.isEmpty()) {
+					def tableRelt = relationApi.addRelation(
+							AddRelationRequest.builder()
+							.sourceId(dataOfferingAssetId)
+							.typeId(string2Uuid(dataOfferingGroupsTableRelTypeId))
+							.targetId(tableRel.getTarget().getId())
+							.build()
+							)
+				}
+			}
+		}
+		/*Find Column Relation*/
+		def columnAssets = []
+		def columnRels =[]
+		
+		for(table in tableAssets) {
+			columnRels = relationApi.findRelations(
+					FindRelationsRequest.builder()
+					.targetId(string2Uuid(table))
+					.relationTypeId(string2Uuid(columnPartOfTableRelTypeId))
+					.build()
+					).getResults()
+
+			for(columnRel in columnRels)
+			{
+				columnAssets.add(uuid2String(columnRel.getSource().getId()))
+				
+				def findColRel=relationApi.findRelations(
+					FindRelationsRequest.builder()
+					.sourceId(dataOfferingAssetId)
+					.relationTypeId(string2Uuid(dataOfferingGroupsFieldColumnRelTypeId))
+					.targetId(columnRel.getSource().getId())
+					.build()
+					).getResults()
+				
+				loggerApi.info('columnRelation-->'+findColRel)
+
+				if(findColRel.isEmpty()) {
+					def columnRelt = relationApi.addRelation(
+							AddRelationRequest.builder()
+							.sourceId(dataOfferingAssetId)
+							.typeId(string2Uuid(dataOfferingGroupsFieldColumnRelTypeId))
+							.targetId(columnRel.getSource().getId())
+							.build()
+							)
+				}
+			}
+		}
+		
+		/*Avro Schema Relation*/
+		def avroRelation
+		def findAvroRel
+		for(schema in avroSchemas) {
+			findAvroRel=relationApi.findRelations(FindRelationsRequest.builder()
+					.sourceId(dataOfferingAssetId)
+					.relationTypeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+					.targetId(string2Uuid(schema))
+					.build()
+					).getResults()
+			loggerApi.info('schema--'+schema)
+			loggerApi.info('findAvroRel--'+findAvroRel)
+			if(findAvroRel.isEmpty()) {
+				avroRelation = relationApi.addRelation(AddRelationRequest.builder()
+						.sourceId(dataOfferingAssetId)
+						.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+						.targetId(string2Uuid(schema))
+						.build()
+						)
+			}
+		}
+	}
+	if(selectAllTablesAndColumns == "none" && validateNormalSchema == false) {
+		for(avSchema in avroList) {
+			def findAvroRelOnly=relationApi.findRelations(FindRelationsRequest.builder()
+					.sourceId(dataOfferingAssetId)
+					.relationTypeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+					.targetId(string2Uuid(avSchema))
+					.build()
+					).getResults()
+			loggerApi.info('schema--'+avSchema)
+			loggerApi.info('findAvroRelOnly--'+findAvroRelOnly)
+			if(findAvroRelOnly.isEmpty()) {
+				avroRelation = relationApi.addRelation(AddRelationRequest.builder()
+						.sourceId(dataOfferingAssetId)
+						.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+						.targetId(string2Uuid(avSchema))
+						.build()
+						)
+			}
+		}
+	}
+	/*Find stroage domain id*/
+	def domainNameStorage = assetApi.getAsset(dataOfferingAssetId).getDomain().getName()
+	
+	def domainSplit = domainNameStorage.split(" - ");
+	
+	loggerApi.info('findAttr ----&gt;'+domainSplit)
+	
+	def domainIdStorage = assetApi.getAsset(dataOfferingAssetId).getDomain().getId()
+	def commId = domainApi.getDomain(domainIdStorage).getCommunity().getId()
+	
+	def addDot = selectedSchemaList.split(",")
+	def listArraySchema = []
+	if(addDot.size() == 0) {
+		//listArraySchema.add("\"${selectedSchemaList}\"")
+		listArraySchema.add(selectedSchemaList)
+	}
+	for(li in addDot) {
+		loggerApi.info("lilililili==="+"\"${li}\"")
+		//listArraySchema.add("\"${li}\"")
+		listArraySchema.add(li)
+	}
+	
+	def storageDomainId = findDomain(domainSplit[0].trim() +' - Storage Platforms', MatchMode.EXACT, string2Uuid(storageDomainTypeId), commId)
+	loggerApi.info('findAttr ----&gt;'+storageDomainId)
+	execution.setVariable('storageDomain',uuid2String(storageDomainId.get(0).getId()))
+	execution.setVariable('redirectUrl',applicationApi.getInfo().getBaseUrl()+"domain/"+uuid2String(storageDomainId.get(0).getId()))
+	execution.setVariable('selectedSchemaToList',listArraySchema.join('.'))
+	
+	}
+
+catch(Exception ex) {
+	isError = true
+	errorMessage = ex.getMessage()
+	execution.setVariable('isError',isError)
+	execution.setVariable('errorMessage',errorMessage)
+}
+
+]]></script>
+    </scriptTask>
+    <scriptTask id="scripttask1" name="Dynamic Functions" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.dto.instance.asset.FindAssetsRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.AddAttributeRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.FindAttributesRequest
+import com.collibra.dgc.core.api.dto.instance.domain.FindDomainsRequest
+import com.collibra.dgc.core.api.dto.MatchMode
+import com.collibra.dgc.core.api.component.instance.CommunityApi
+import com.collibra.dgc.core.api.component.logger.LoggerApi
+import com.collibra.dgc.core.api.dto.instance.community.FindCommunitiesRequest
+import com.collibra.dgc.core.api.component.instance.DomainApi
+import com.collibra.dgc.core.api.component.meta.AttributeTypeApi
+import com.collibra.dgc.core.api.dto.instance.relation.FindRelationsRequest
+
+
+loggerApi.info("string to uuid selectedDatset =========>"+string2Uuid(selectedDatset))
+
+loggerApi.info("selectedDatset =========>"+selectedDatset)
+
+
+def publicationModeValuesMap = [:]
+def publicationModeAllowedValues = attributeTypeApi.getAttributeType(string2Uuid(publicationModeAttrId)).getAllowedValues()
+
+loggerApi.info("publicationModeAllowedValues ===========> "+publicationModeAllowedValues)
+
+for(publicationModeAllowedValue in publicationModeAllowedValues)
+{
+	publicationModeValuesMap.put(publicationModeAllowedValue, publicationModeAllowedValue)
+}
+/*
+ * def datasetList = utility.toList(selectedDatset) for(dataset in datasetList)
+ * {
+ *
+ * }
+ */
+
+
+ def instanceNameValuesMap = [:]
+def codeValueTypes = []
+codeValueTypes.add(string2Uuid(everestAssetTypeId))
+def listDevInstance = assetApi.findAssets(
+		FindAssetsRequest.builder()
+		.domainId(string2Uuid(instanceDevelopmentDomainId)) // EPS domain id
+		.build()
+		).getResults();
+
+loggerApi.info("listDevInstance"+listDevInstance)
+def envtypeIds =[]
+envtypeIds.add(string2Uuid(environmentAttributTypeId))
+for(instance in listDevInstance) {
+	
+def envAttributes = attributeApi.findAttributes(
+		FindAttributesRequest.builder()
+		.typeIds(envtypeIds)
+		.assetId(instance.getId())
+		.build()
+		).getResults()
+		if(!envAttributes.isEmpty())
+		{
+if(envAttributes.get(0).getValue() == 'Development' || envAttributes.get(0).getValue() == 'Integration')
+{
+	instanceNameValuesMap.put(uuid2String(instance.getId()), instance.getName())
+	}
+}
+}
+//Finding the value of EPS Producer Attribute from the Data Set
+def typeIds = []
+typeIds.add(string2Uuid(epsProducerNameAttrTypeId))
+
+def epsproducerAttr = attributeApi.findAttributes(
+		FindAttributesRequest.builder()
+		.typeIds(typeIds)
+		.assetId(string2Uuid(selectedDatset))
+		.build()
+		).getResults()
+
+def epsProducerName = epsproducerAttr.get(0).getValue()
+//loggerApi.info('epsProducerName'+epsProducerName)
+
+def epsProducerAsset = assetApi.findAssets(
+		FindAssetsRequest.builder()
+		.name(epsProducerName)
+		.nameMatchMode(MatchMode.EXACT)
+		.domainId(string2Uuid(epsProducerDomainId))
+		.build()
+		).getResults()
+
+		def epsProducerId
+		
+		if(!epsProducerAsset.isEmpty()) {
+ epsProducerId = epsProducerAsset.get(0).getId()
+		}
+		
+def contacttypeIds = []
+contacttypeIds.add(string2Uuid(contactEmailAttrId))
+
+def contactEmailAttr = attributeApi.findAttributes(
+		FindAttributesRequest.builder()
+		.typeIds(contacttypeIds)
+		.assetId(string2Uuid(selectedDatset))
+		.build()
+		).getResults()
+
+def contactEmailValue = contactEmailAttr.get(0).getValue()
+contactEmailValue = contactEmailValue.replaceAll("<[^>]*>", "")
+//loggerApi.info('contactEmailValue'+contactEmailValue)
+
+
+// Getting Assets from SLA Arrival Time Domain
+
+def typeIds1 = []
+typeIds1.add(string2Uuid(codeValueTypeId)) //data set type id
+
+def listSLAArrivalTime= assetApi.findAssets(
+		FindAssetsRequest.builder()
+		.typeIds(typeIds1)
+		.domainId(string2Uuid(slaArrivalTimeDomainId)) // EPS domain id
+		.build()
+		).getResults();
+loggerApi.info('listSLAArrivalTime--->'+listSLAArrivalTime)
+def slaArrivalTimeList = []
+def slaArrivalTimeMap = [:]
+for(eachSLATime in listSLAArrivalTime) {
+	slaArrivalTimeList.add(eachSLATime.getName())
+	slaArrivalTimeMap.put(uuid2String(eachSLATime.getId()), eachSLATime.getName())
+
+}
+//loggerApi.info('slaArrivalTimeList------>'+slaArrivalTimeList)
+
+// Getting Assets from SLA Offset Days Domain
+
+def listSLAOffsetDays= assetApi.findAssets(
+		FindAssetsRequest.builder()
+		.typeIds(typeIds1)
+		.domainId(string2Uuid(slaOffsetDaysDomainId)) // EPS domain id
+		.build()
+		).getResults();
+loggerApi.info('listSLAOffsetDays--->'+listSLAOffsetDays)
+def slaOffsetDaysList = []
+def slaOffsetDaysMap = [:]
+for(eachSLADays in listSLAOffsetDays) {
+	//slaOffsetDaysList.add(eachSLADays.getName())
+	slaOffsetDaysMap.put(uuid2String(eachSLADays.getId()), eachSLADays.getName())
+
+}
+//loggerApi.info('slaOffsetDaysList------>'+slaOffsetDaysList)
+
+// Getting Assets from SLA Offset Days Domain
+
+def listSLACalendar= assetApi.findAssets(
+		FindAssetsRequest.builder()
+		.typeIds(typeIds1)
+		.domainId(string2Uuid(slaCalendarDomainId)) // EPS domain id
+		.build()
+		).getResults();
+//loggerApi.info('listSLACalendar--->'+listSLACalendar)
+def slaCalendarList = []
+def slaCalendarMap = [:]
+for(eachCalendar in listSLACalendar) {
+	//slaCalendarList.add(eachCalendar.getName())
+	slaCalendarMap.put(uuid2String(eachCalendar.getId()), eachCalendar.getName())
+
+}
+//loggerApi.info('slaCalendarList------>'+slaCalendarList.size())
+//Get schema related to dataset
+def noSchema
+def schemaFound = false
+def schemaList = []
+def schemaRelation = relationApi.findRelations(
+		FindRelationsRequest.builder()
+		.sourceId(string2Uuid(selectedDatset))
+		.relationTypeId(string2Uuid(dataSetContainsSchemaRelTypeId))
+		.build()
+		).getResults()
+for(schemaRel in schemaRelation) {
+	def schemaId = schemaRel.getTarget().getId()
+	if(assetApi.getAsset(schemaId).getStatus().getName() == "Candidate") {
+		schemaList.add(schemaId)
+	}
+	
+}
+if(schemaList.isEmpty())
+{
+	noSchema= "<br><b> <font color='green'>* No schemas available.</font></b></br>"
+}
+execution.setVariable('noSchema',noSchema)
+
+def storagePlatformValuesMap = [:]
+
+def storagePlatformAllowedValues = attributeTypeApi.getAttributeType(string2Uuid(storagePlatformAttrTypeId)).getAllowedValues()
+storagePlatformAllowedValues.remove('KAFKA')
+storagePlatformAllowedValues.remove('UDS Registration DB')
+for(storagePlatformAllowedValue in storagePlatformAllowedValues)
+{
+	storagePlatformValuesMap.put(storagePlatformAllowedValue, storagePlatformAllowedValue)
+}
+loggerApi.info('schemaAssets--->'+schemaList.size())
+
+/*Get instance name*/
+def defaultInstanceName = ""
+def instanceRelations = relationApi.findRelations(
+		FindRelationsRequest.builder()
+		.sourceId(string2Uuid(selectedDatset))
+		.relationTypeId(string2Uuid(dataAssetUtilizePipelineRelTypeId))
+		.build()
+		).getResults()
+if(!instanceRelations.isEmpty()) {
+	defaultInstanceName = uuid2String(instanceRelations.get(0).getTarget().getId())
+	loggerApi.info("defaultInstanceName"+defaultInstanceName)
+}
+
+execution.setVariable('contactEmailValue',contactEmailValue)
+execution.setVariable('epsProducerId',epsProducerId)
+execution.setVariable(' epsProducerName', epsProducerName)
+//execution.setVariable('enumValuesList',enumValuesList)
+execution.setVariable('publicationModeValuesMap',publicationModeValuesMap)
+execution.setVariable('instanceNameValuesMap',instanceNameValuesMap)
+execution.setVariable('validationMsg','')
+execution.setVariable('slaOffsetDaysMap',slaOffsetDaysMap)
+execution.setVariable('slaArrivalTimeMap',slaArrivalTimeMap)
+execution.setVariable('slaCalendarMap',slaCalendarMap)
+execution.setVariable('schemaList',schemaList)
+execution.setVariable('storagePlatformValuesMap',storagePlatformValuesMap)
+execution.setVariable('defaultInstanceName',defaultInstanceName)]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow2" sourceRef="scripttask1" targetRef="usertask1"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow7" name="Submit" sourceRef="exclusivegateway1" targetRef="scripttask2">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${submit}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow8" sourceRef="exclusivegateway1" targetRef="scripttask5">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${nextflowbtn}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway2" name="Exclusive Gateway"></exclusiveGateway>
+    <userTask id="usertask2" name="Failed to Create Asset" activiti:candidateUsers="user(${startUser})">
+      <documentation>Check below error, for more information, check databook console -&gt; Data Governance Centre Node -&gt; Logs -&gt; dgc.log file  &lt;br&gt;&lt;br&gt; ${errorMessage}</documentation>
+    </userTask>
+    <sequenceFlow id="flow11" name="Error" sourceRef="exclusivegateway2" targetRef="usertask2">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${isError==true}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow12" name="No Error" sourceRef="exclusivegateway2" targetRef="endevent4">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${isError==false}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow13" sourceRef="usertask2" targetRef="endevent2"></sequenceFlow>
+    <endEvent id="endevent2" name="End"></endEvent>
+    <serviceTask id="servicetask1" name="Create Technology Storage" activiti:class="com.collibra.dgc.core.workflow.activiti.delegate.StartWorkflowInstanceDelegate">
+      <documentation>You have been directed to the Data Offering '&lt;b&gt;&lt;a href="${DataOfferingUrl}"&gt;${DataOfferingName}&lt;/a&gt; &lt;/b&gt;'.</documentation>
+      <extensionElements>
+        <activiti:field name="resourceId">
+          <activiti:expression><![CDATA[${storageDomain}]]></activiti:expression>
+        </activiti:field>
+        <activiti:field name="resourceType">
+          <activiti:string><![CDATA[VC]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="processId">
+          <activiti:string><![CDATA[dsrtechstoragetemplateprocess]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="propertyKeyList">
+          <activiti:string><![CDATA[fromWorkflow,currentOfferingName,storagePlatformType,storagePlatform]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="propertyValueList">
+          <activiti:expression><![CDATA[${'true'},${dataOfferingAssetId},${'true'},${storagePlatform}]]></activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="flow19" sourceRef="servicetask1" targetRef="usertask3"></sequenceFlow>
+    <scriptTask id="scripttask4" name="Validations" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.dto.MatchMode
+import com.collibra.dgc.core.api.dto.instance.asset.FindAssetsRequest
+import com.collibra.dgc.core.api.component.instance.CommunityApi
+import com.collibra.dgc.core.api.dto.instance.domain.FindDomainsRequest
+import com.collibra.dgc.core.api.dto.instance.community.FindCommunitiesRequest
+import com.collibra.dgc.core.api.component.instance.DomainApi
+import com.collibra.dgc.core.api.dto.instance.attribute.FindAttributesRequest
+
+def assetsExists = false
+
+def offeringName = name.trim().replaceAll("\\s+", " ")
+def splName
+splName = offeringName.split('-')
+loggerApi.info('name-->'+splName)
+
+def validationMsg = ""
+if(splName.size()!=1)
+{
+	validationMsg = "<br> <b><font color='red'>* Please enter the proper data offering name. Hypen is not allowed</font></b><br>"
+}
+def typeIds=[]
+
+def findSchemaName(communityId, schemaName) {
+	return phyDataDicDomain = domainApi.findDomains(
+			FindDomainsRequest.builder()
+			.name(schemaName)
+			.nameMatchMode(MatchMode.ANYWHERE)
+			.communityId(communityId)
+			.build()
+			).getResults()
+}
+
+def checkOfferingName = offeringName
+def instanceNameChecking =""
+if(execution.getVariable("instanceName") != "") {
+	//if(instanceNameValuesMap.get(instanceName) == "Humming Bird")
+	if(assetApi.getAsset(string2Uuid(instanceName)).getName() == hummingBirdInstanceName)
+		{
+		instanceNameChecking = ""
+		}
+		else
+		{
+			instanceNameChecking = "_"+assetApi.getAsset(string2Uuid(instanceName)).getName()
+		}
+	checkOfferingName = offeringName + instanceNameChecking
+} else {
+	validationMsg += "<br> <b><font color='red'>* Please select instance name</font></b>"
+}
+
+typeIds.add(string2Uuid(dataOfferingAssetTypeId))
+loggerApi.info("offering--->"+name.trim().replaceAll("\\s+", " "))
+def domainAssets = assetApi.findAssets(
+		FindAssetsRequest.builder()
+		.name(checkOfferingName)
+		.domainId(string2Uuid(item.getVocabulary()))
+		.nameMatchMode(MatchMode.EXACT)
+		.typeIds(typeIds)
+		.build()
+		).getResults()
+if(!domainAssets.isEmpty()) {
+	validationMsg += "<br> <b><font color='red'>* Data offering name already exists.</font></b>"
+}
+def desc = description.toString().replace("&nbsp;"," ")
+def replaceHtml = desc.replaceAll("\\<.*?\\>", "")
+
+loggerApi.info('description.toString().trim()---'+replaceHtml)
+if(replaceHtml.trim().isEmpty()) {
+	validationMsg += "<br><b><font color = 'red'>* Description cannot be null, Please provide proper description </font></b><br>"
+}
+
+def parentCommunityId = communityApi.getCommunity(string2Uuid(item.getCommunity())).getParent().getId()
+loggerApi.info('parent community --->'+parentCommunityId)
+
+def phyDataDicComm = communityApi.findCommunities(
+	FindCommunitiesRequest.builder()
+	.name(physicalDataDictionariesCommunityName)
+	.nameMatchMode(MatchMode.ANYWHERE)
+	.parentId(parentCommunityId)
+	.build()
+	).getResults()
+	
+loggerApi.info('phyDataDicComm --->'+phyDataDicComm)
+def dataSetDomain = domainApi.getDomain(string2Uuid(item.getVocabulary())).getName()
+def dataSetDomainSealId = dataSetDomain.split('-')[0]
+
+loggerApi.info("i ama fdf "+ dataSetDomainSealId + "- "+schemaName)
+
+if(!schemaName.isEmpty())
+{
+	
+	def phyDataDicDomain = findSchemaName(phyDataDicComm.get(0).getId(), dataSetDomainSealId + "- "+ schemaName.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" "))
+	if(!phyDataDicDomain.isEmpty())
+	{
+		validationMsg += "<br><b> <font color='red'>* Avro schema name alreay exists. " +phyDataDicDomain[0].getName()+ "</font></b></br>"
+		
+	}	
+}
+
+if(!alternateSchemaLocation.isEmpty())
+{
+	def alternatePhyDataDicDomain = findSchemaName(phyDataDicComm.get(0).getId(), dataSetDomainSealId + "- "+ alternateSchemaLocation.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" "))
+	if(!alternatePhyDataDicDomain.isEmpty())
+	{
+		validationMsg += "<br><b> <font color='red'>* Alternate schema location alreay exists. " +alternatePhyDataDicDomain[0].getName()+ "</font></b></br>"
+
+	}
+}
+if(selectedSchemaList.isEmpty() && schemaName.isEmpty() && alternateSchemaLocation.isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Please provide Schema or Schema Name or Alternate Schema Location </font></b></br>"
+}
+
+if(!schemaName.isEmpty() && schemaDefinition.toString().isEmpty() && primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema definiton and Avro Primary key is mandatory </font></b></br>"
+} else if(schemaName.isEmpty() && !schemaDefinition.toString().isEmpty() && primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema Name and Avro Primary key is mandatory </font></b></br>"
+} else if(schemaName.isEmpty() && schemaDefinition.toString().isEmpty() && !primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema Name and Avro Schema definiton is mandatory </font></b></br>"
+} else if(!schemaName.isEmpty() && !schemaDefinition.toString().isEmpty() && primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Primary key is mandatory </font></b></br>"
+} else if(schemaName.isEmpty() && !schemaDefinition.toString().isEmpty() && !primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema is mandatory </font></b></br>"
+} else if(!schemaName.isEmpty() && schemaDefinition.toString().isEmpty() && !primaryKeys.toString().isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Avro Schema Definition mandatory </font></b></br>"
+}
+if(nextflowbtn == true && storagePlatform.isEmpty()) {
+	validationMsg += "<br><b> <font color='red'>* Please select technology storage platform </font></b></br>"
+}
+
+if(!schemaName.isEmpty() && !alternateSchemaLocation.isEmpty()) {
+	if(schemaName.trim().toLowerCase().replaceAll("\\s+", " ") == alternateSchemaLocation.trim().toLowerCase().replaceAll("\\s+", " ")) {
+		validationMsg += "<br><b> <font color='red'>* Same name entered in Schema Name and Alternate Schema Location </font></b></br>"
+	}
+}
+
+/*validation for select all tables and columns*/
+def schemas = utility.toList(selectedSchemaList)
+def avroTypeIds=[]
+avroTypeIds.add(string2Uuid(dataSourceTypeAttrTypeId))
+
+def validateNormalSchema = false
+def avroSchemaAttr
+def avroList = []
+for(schema in schemas) {
+	avroSchemaAttr=attributeApi.findAttributes(FindAttributesRequest.builder()
+			.typeIds(avroTypeIds)
+			.assetId(string2Uuid(schema))
+			.build()
+			).getResults()
+
+	if(!avroSchemaAttr.isEmpty()) {
+		if(avroSchemaAttr.get(0).getValue() == "Avro") {
+			avroList.add(schema)
+		} else {
+			validateNormalSchema = true
+		}
+	}
+}
+
+if(validateNormalSchema) {
+	loggerApi.info("selectAllTablesAndColumns==>"+selectAllTablesAndColumns)
+	if(selectAllTablesAndColumns == "none") {
+		validationMsg += "<br><b> <font color='red'>* Please select all tables and columns </font></b></br>"
+	}
+}
+execution.setVariable('avroList',avroList)
+execution.setVariable('validateNormalSchema',validateNormalSchema)
+
+
+execution.setVariable('validationMsg',validationMsg)
+]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow20" sourceRef="exclusivegateway10" targetRef="scripttask4">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${submit || nextflowbtn}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow24" sourceRef="scripttask2" targetRef="exclusivegateway2"></sequenceFlow>
+    <userTask id="usertask3" name="Go to Create Technology Storage" activiti:candidateUsers="user(${startUser})">
+      <extensionElements>
+        <activiti:formProperty id="gotooffering" name="&lt;h1 style=&quot;text-align:center&quot;&gt;&lt;b&gt;Loading...&lt;/b&gt;&lt;/h1&gt;&lt;style&gt;input[name='gotooffering']{display:none;}&lt;/style&gt;&lt;script&gt;window.open(&quot;${redirectUrl}&quot;,&quot;_self&quot;);document.getElementsByName(&quot;offeringloadbtn&quot;)[0].style.visibility = &quot;hidden&quot;;&lt;/script&gt;" type="string"></activiti:formProperty>
+        <activiti:formProperty id="offeringloadbtn" name="Loading" type="button"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <boundaryEvent id="boundarytimer1" name="Timer" attachedToRef="usertask3" cancelActivity="true">
+      <timerEventDefinition>
+        <timeDuration>PT10S</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <sequenceFlow id="flow26" sourceRef="boundarytimer1" targetRef="endevent2"></sequenceFlow>
+    <sequenceFlow id="flow27" sourceRef="usertask3" targetRef="endevent2"></sequenceFlow>
+    <endEvent id="endevent4" name="End"></endEvent>
+    <exclusiveGateway id="exclusivegateway5" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow30" sourceRef="exclusivegateway5" targetRef="servicetask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${selectAllTablesAndColumns =="none" || selectAllTablesAndColumns =="Yes"}]]></conditionExpression>
+    </sequenceFlow>
+    <serviceTask id="servicetask2" name="Link  Column to Data Offering" activiti:class="com.collibra.dgc.core.workflow.activiti.delegate.StartWorkflowInstanceDelegate">
+      <extensionElements>
+        <activiti:field name="resourceId">
+          <activiti:expression><![CDATA[${dataOfferingAssetId}]]></activiti:expression>
+        </activiti:field>
+        <activiti:field name="resourceType">
+          <activiti:string><![CDATA[TE]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="processId">
+          <activiti:string><![CDATA[dsrlinkcolumntodataofferingprocess]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="propertyKeyList">
+          <activiti:string><![CDATA[fromWorkflow,selectAllTablesAndColumns,selectedSchemaList,storagePlatformType,storagePlatform]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="propertyValueList">
+          <activiti:expression><![CDATA[${'true'},${selectAllTablesAndColumns},${selectedSchemaToList},${'true'},${storagePlatform}]]></activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="flow31" sourceRef="exclusivegateway5" targetRef="exclusivegateway6">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${selectAllTablesAndColumns =="No"}]]></conditionExpression>
+    </sequenceFlow>
+    <userTask id="usertask4" name="Go to Data Offering" activiti:candidateUsers="user(${startUser})">
+      <extensionElements>
+        <activiti:formProperty id="gotooffering" name="&lt;h1 style=&quot;text-align:center&quot;&gt;&lt;b&gt;Loading...&lt;/b&gt;&lt;/h1&gt;&lt;style&gt;input[name='gotooffering']{display:none;}&lt;/style&gt;&lt;script&gt;window.open(&quot;${offeringRedirectUrl}&quot;,&quot;_self&quot;);document.getElementsByName(&quot;offeringloadbtn&quot;)[0].style.visibility = &quot;hidden&quot;;&lt;/script&gt;" type="string"></activiti:formProperty>
+        <activiti:formProperty id="offeringloadbtn" name="Loading" type="button"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow32" sourceRef="servicetask2" targetRef="usertask4"></sequenceFlow>
+    <sequenceFlow id="flow33" sourceRef="usertask4" targetRef="endevent2"></sequenceFlow>
+    <boundaryEvent id="boundarytimer2" name="Timer" attachedToRef="usertask4" cancelActivity="true">
+      <timerEventDefinition>
+        <timeDuration>PT10S</timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <sequenceFlow id="flow34" sourceRef="boundarytimer2" targetRef="endevent2"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway6" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow35" sourceRef="exclusivegateway6" targetRef="servicetask2">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${!selectedSchemaToList.isEmpty()}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow36" sourceRef="exclusivegateway6" targetRef="servicetask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${selectedSchemaToList.isEmpty()}]]></conditionExpression>
+    </sequenceFlow>
+    <scriptTask id="scripttask5" name="Create Data Offering Metadata" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.component.instance.CommunityApi
+import com.collibra.dgc.core.api.component.instance.DomainApi
+import com.collibra.dgc.core.api.component.logger.LoggerApi
+import com.collibra.dgc.core.api.dto.instance.asset.AddAssetRequest
+import com.collibra.dgc.core.api.dto.instance.asset.ChangeAssetRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.AddAttributeRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.FindAttributesRequest
+import com.collibra.dgc.core.api.dto.instance.relation.AddRelationRequest
+import com.collibra.dgc.core.api.dto.instance.community.FindCommunitiesRequest
+import com.collibra.dgc.core.api.dto.instance.domain.AddDomainRequest
+import com.collibra.dgc.core.api.dto.MatchMode
+import com.collibra.dgc.core.api.dto.instance.relation.FindRelationsRequest
+import com.collibra.dgc.core.api.dto.instance.domain.FindDomainsRequest
+import com.collibra.dgc.core.api.component.instance.RelationApi
+
+
+def addAttribute = { assetId, typeId, value ->
+	attributeApi.addAttribute(
+			AddAttributeRequest.builder()
+			.assetId(assetId)
+			.typeId(typeId)
+			.value(value)
+			.build()
+			)
+}
+
+
+def addAsset = { name, typeId, displayName, domainId, statusId ->
+	assetApi.addAsset(
+			AddAssetRequest.builder()
+			.name(name)
+			.typeId(typeId)
+			.displayName(displayName)
+			.domainId(domainId)
+			.status(statusId)
+			.build()
+			)
+}
+
+def addRelation = {sourceId, targetId, relationtypeId ->
+	relationApi.addRelation(
+			AddRelationRequest.builder()
+			.sourceId(sourceId)
+			.targetId(targetId)
+			.typeId(relationtypeId)
+			.build()
+			)
+}
+def findDomain(name, nameMatchMode, typeId, communityId) {
+	return domainApi.findDomains(FindDomainsRequest.builder()
+			.name(name)
+			.nameMatchMode(nameMatchMode)
+			.typeId(typeId)
+			.communityId(communityId)
+			.build()
+			).getResults()
+}
+def findSchemaNameAvro(communityId, schemaName) {
+	return domainApi.findDomains(
+			FindDomainsRequest.builder()
+			.name(schemaName)
+			.nameMatchMode(MatchMode.ANYWHERE)
+			.communityId(communityId)
+			.build()
+			).getResults()
+}
+
+def isError = false
+def errorMessage
+
+try {
+
+	// Getting the Community Name for splitting the LOB
+	def communityName = communityApi.getCommunity(string2Uuid(item.getCommunity())).getName()
+	loggerApi.info('communityName-->'+communityName)
+
+	def LOB= communityName.split(' -')[0]
+	loggerApi.info('comShortname-->'+LOB)
+	execution.setVariable('LOB',LOB)
+
+	//Getting the Data Set Name
+	def dataSetName = assetApi.getAsset(string2Uuid(selectedDatset)).getName()
+	loggerApi.info('dataSetName'+dataSetName)
+
+	def domainId = string2Uuid(item.id)
+	loggerApi.info('domainId--->'+domainId)
+
+	def domainName =  item.getName()
+	loggerApi.info('domainName--->'+domainName)
+
+	//Getting the sealid from the Domain
+	def sealId = domainName.split(' -')[0]
+	loggerApi.info('sealId-->'+sealId)
+
+	//Finding the value of EPS Producer Attribute from the Data Set
+	def typeIds = []
+	typeIds.add(string2Uuid(epsProducerNameAttrTypeId))
+
+	def epsproducerAttr = attributeApi.findAttributes(
+			FindAttributesRequest.builder()
+			.typeIds(typeIds)
+			.assetId(string2Uuid(selectedDatset))
+			.build()
+			).getResults()
+
+	def epsProducerName = epsproducerAttr.get(0).getValue()
+	loggerApi.info('epsProducerName'+epsProducerName)
+	def offeringName = name.trim().replaceAll("\\s+", " ")
+
+	def dataOfferingAsset
+	def instanceNameChecking = ""
+	
+	loggerApi.info("instanceName==>"+instanceName)
+		
+	if(execution.getVariable("instanceName") != "") {
+		if(assetApi.getAsset(string2Uuid(instanceName)).getName() == hummingBirdInstanceName)
+		{
+		instanceNameChecking = ""
+		}
+		else
+		{
+			instanceNameChecking = "_"+assetApi.getAsset(string2Uuid(instanceName)).getName()
+		}
+	}
+	
+	// Adding the Data Offering Asset in the Data Set Registry Domain for CORP and Other LOB
+	if(LOB == "CORP" ) {
+		
+	 dataOfferingAsset = addAsset(epsProducerName+"-"+offeringName.replaceAll(" ", "") + instanceNameChecking ,string2Uuid(dataOfferingAssetTypeId),offeringName + instanceNameChecking,domainId,string2Uuid(candidateStatusTypeId))
+		
+		loggerApi.info('dataOfferingAsset-->'+dataOfferingAsset)
+	}
+	else {
+		
+	 dataOfferingAsset = addAsset(LOB+"."+sealId+"."+dataSetName+"-"+offeringName.replaceAll(" ", "") + instanceNameChecking ,string2Uuid(dataOfferingAssetTypeId),offeringName + instanceNameChecking,domainId,string2Uuid(candidateStatusTypeId))
+	
+		loggerApi.info('dataOfferingAsset-->'+dataOfferingAsset)
+	}
+	def dataOfferingAssetId = dataOfferingAsset.getId()
+	
+	// Adding the attributes to the Data Offering Asset
+	
+	def contacteMailTrim = contacteMail.trim().replaceAll("\\s+", "")
+	def desc = description.toString().replace("&nbsp;"," ")
+	
+	addAttribute(dataOfferingAssetId,string2Uuid(epsProducerNameAttrTypeId), epsProducerName)
+	addAttribute(dataOfferingAssetId,string2Uuid(descriptionAttrId),desc)
+	addAttribute(dataOfferingAssetId,string2Uuid(consumableAttrId),consumable.toString())
+	addAttribute(dataOfferingAssetId,string2Uuid(publicationModeAttrId),publicationMode)
+	if(execution.getVariable("slaArrivalTime") != "") {
+		loggerApi.info("i am here 1")
+		addAttribute(dataOfferingAssetId,string2Uuid(slaArrivalTimeAttrId),assetApi.getAsset(string2Uuid(slaArrivalTime)).getName())
+	}
+	if(execution.getVariable("slaOffsetDays") != "") {
+		loggerApi.info("i am here 2")
+		addAttribute(dataOfferingAssetId,string2Uuid(slaOffsetDaysAttrId),assetApi.getAsset(string2Uuid(slaOffsetDays)).getName())
+	}
+	if(execution.getVariable("slaCalender") != "" && !slaCalendar.isEmpty()) {
+		loggerApi.info("i am here 3"+slaCalendar)
+		addAttribute(dataOfferingAssetId,string2Uuid(slaCalenderAttrId),assetApi.getAsset(string2Uuid(slaCalendar)).getName())
+	}
+	loggerApi.info("i am here 4")
+	addAttribute(dataOfferingAssetId,string2Uuid(contactEmailAttrId),contacteMailTrim)
+	loggerApi.info("i am here 5")
+	if(execution.getVariable("instanceName") != "") {
+		//addAttribute(dataOfferingAssetId,string2Uuid(instanceNameAttrTypeId),instanceName)
+		//addRelation(dataOfferingAssetId,string2Uuid(instanceName), string2Uuid(dataOfferinginContainsEverestProducerRelTypeId))
+		/*def utilizePipeLineRels = relationApi.findRelations(
+					FindRelationsRequest.builder()
+					.sourceId(string2Uuid(item.id))
+					.relationTypeId(string2Uuid(dataAssetUtilizePipelineRelTypeId))
+					.build()
+					).getResults()
+		def removeUtilize = []
+		if(!utilizePipeLineRels.isEmpty()) {
+			removeUtilize.add(utilizePipeLineRels.get(0).getId())
+			relationApi.removeRelations(removeUtilize)
+		}*/
+		addRelation(dataOfferingAssetId,string2Uuid(instanceName), string2Uuid(dataAssetUtilizePipelineRelTypeId))
+	}
+
+	// Adding Relations to the Data Offering
+	loggerApi.info("i am here 2")
+	if(execution.getVariable("mileStoneByMilestoneField") != "") {
+		addRelation(dataOfferingAssetId,string2Uuid(mileStoneByMilestoneField), string2Uuid(dataOfferingMilestoneByMilestoneFieldRelTypeId))
+	}
+
+	
+	addRelation(string2Uuid(selectedDatset),dataOfferingAssetId, string2Uuid(dataSetContainsDataOfferingRelTypeId))
+
+	
+	def offeringRedirectUrl = applicationApi.getInfo().getBaseUrl()+'asset/'+uuid2String(dataOfferingAssetId)
+	
+	execution.setVariable('offeringRedirectUrl',offeringRedirectUrl)
+	execution.setVariable('dataOfferingAssetId',uuid2String(dataOfferingAssetId))
+	execution.setVariable('isError',isError)
+	
+	
+	
+	def parentCommunityId = communityApi.getCommunity(string2Uuid(item.getCommunity())).getParent().getId()
+	loggerApi.info('parent community --->'+parentCommunityId)
+
+	def phyDataDicComm = communityApi.findCommunities(
+		FindCommunitiesRequest.builder()
+		.name(physicalDataDictionariesCommunityName)
+		.nameMatchMode(MatchMode.ANYWHERE)
+		.parentId(parentCommunityId)
+		.build()
+		).getResults()
+		
+	loggerApi.info('phyDataDicComm --->'+phyDataDicComm)
+
+	def dataSetDomain = item.getName()
+
+	def dataSetDomainSealId = dataSetDomain.split('-')[0]
+
+	if(!schemaName.isEmpty() && schemaName != null && schemaDefinition != null && primaryKeys != null)
+	{
+	def schemaFilter = schemaName.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" ")
+	def phyDataDicDomain = domainApi.addDomain(
+		AddDomainRequest.builder()
+		.name(dataSetDomainSealId+'- '+schemaFilter)
+		.typeId(string2Uuid(physicalDataDictionaryDomainTypeId))
+		.communityId(phyDataDicComm.get(0).getId())
+		.build()
+		)
+		
+	loggerApi.info('phyDataDicDomain----> '+phyDataDicDomain)
+
+	def schemaAsset = assetApi.addAsset(
+		AddAssetRequest.builder()
+		.name(schemaFilter)
+		.typeId(string2Uuid(schemaAssetTypeId))
+		.domainId(phyDataDicDomain.getId())
+		.build()
+		)
+		
+		def schemaAssetId = schemaAsset.getId()
+		
+			def schemDef = schemaDefinition.toString().replace("&nbsp;"," ")
+			addAttribute(schemaAssetId,string2Uuid(schemaDefinitionAttrTypeId),schemDef.replaceAll("\\<.*?\\>", ""))
+			addAttribute(schemaAssetId,string2Uuid(primaryKeysAttrTypeId),primaryKeys.toString().trim().replaceAll("\\s+", " "))
+			addAttribute(schemaAssetId,string2Uuid(dataSourceTypeAttrTypeId),'Avro')
+			
+		
+	relationApi.addRelation(
+		AddRelationRequest.builder()
+		.sourceId(dataOfferingAssetId)
+		.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+		.targetId(schemaAssetId)
+		.build()
+		)
+	relationApi.addRelation(
+		AddRelationRequest.builder()
+		.sourceId(string2Uuid(selectedDatset))
+		.typeId(string2Uuid(dataSetContainsSchemaRelTypeId))
+		.targetId(schemaAssetId)
+		.build()
+		)
+
+	}
+	if(execution.getVariable("alternateSchemaLocation") != "")
+	{
+		def alternateSchema = alternateSchemaLocation.trim().toLowerCase().replaceAll("\\s+", " ").split(" ").collect{it.capitalize()}.join(" ")
+		
+		
+		
+		loggerApi.info('alternateSchema'+alternateSchema)
+		if(!alternateSchema.isEmpty()) {
+			
+			def checkDomain = findSchemaNameAvro(phyDataDicComm.get(0).getId(), dataSetDomainSealId+'- '+alternateSchema)
+			if(checkDomain.isEmpty()) {
+				def alterPhyDataDicDomain = domainApi.addDomain(
+					AddDomainRequest.builder()
+					.name(dataSetDomainSealId+'- '+alternateSchema)
+					.typeId(string2Uuid(physicalDataDictionaryDomainTypeId))
+					.communityId(phyDataDicComm.get(0).getId())
+					.build()
+					)
+				def alternateSchemaAsset = assetApi.addAsset(
+					AddAssetRequest.builder()
+					.name(alternateSchema)
+					.typeId(string2Uuid(schemaAssetTypeId))
+					.domainId(alterPhyDataDicDomain.getId())
+					.build()
+					)
+				addAttribute(alternateSchemaAsset.getId(),string2Uuid(dataSourceTypeAttrTypeId),'Avro')
+				relationApi.addRelation(
+					AddRelationRequest.builder()
+					.sourceId(dataOfferingAssetId)
+					.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+					.targetId(alternateSchemaAsset.getId())
+					.build()
+					)
+				relationApi.addRelation(
+					AddRelationRequest.builder()
+					.sourceId(string2Uuid(selectedDatset))
+					.typeId(string2Uuid(dataSetContainsSchemaRelTypeId))
+					.targetId(alternateSchemaAsset.getId())
+					.build()
+					)
+			}
+			
+		}
+	}
+	def tableAssets = []
+	if(selectAllTablesAndColumns == "Yes") {
+		
+		def avroSchemas=[]
+		def normalSchemas=[]
+		def avroTypeIds=[]
+		avroTypeIds.add(string2Uuid(avroSchemaAttrTypeId))
+		avroTypeIds.add(string2Uuid(avroSchemaPrimaryKeyAttrTypeId))
+		def attrFound
+		def avroSchemaAttr
+		
+		def schemas=utility.toList(selectedSchemaList)
+		for(schema in schemas) {
+			avroSchemaAttr=attributeApi.findAttributes(FindAttributesRequest.builder()
+					.typeIds(avroTypeIds)
+					.assetId(string2Uuid(schema))
+					.build()
+					).getResults()
+
+
+			loggerApi.info('attributes-->'+avroSchemaAttr)
+			if(!avroSchemaAttr.isEmpty()) {
+				avroSchemas.add(schema)
+			}
+			else {
+
+				normalSchemas.add(schema)
+			}
+		}
+		/*Normal schema Relation*/
+		for(schemaid in normalSchemas) {
+			def tableRels = relationApi.findRelations(
+					FindRelationsRequest.builder()
+					.sourceId(string2Uuid(schemaid))
+					.relationTypeId(string2Uuid(schemaContainsTableRelTypeId))
+					.build()
+					).getResults()
+			
+			/*Add schema relation to data offering*/
+			def groupsSchemaRelations =relationApi.findRelations(
+				FindRelationsRequest.builder()
+				.sourceId(dataOfferingAssetId)
+				.relationTypeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+				.targetId(string2Uuid(schemaid))
+				.build()
+				).getResults()
+
+			if(groupsSchemaRelations.isEmpty()) {
+				relationApi.addRelation(
+						AddRelationRequest.builder()
+						.sourceId(dataOfferingAssetId)
+						.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+						.targetId(string2Uuid(schemaid))
+						.build()
+						)
+			}
+			
+			def tabs=[]
+			for(tableRel in tableRels)
+			{
+				tableAssets.add(uuid2String(tableRel.getTarget().getId()))
+				
+				def findTabRel=relationApi.findRelations(
+						FindRelationsRequest.builder()
+						.sourceId(dataOfferingAssetId)
+						.relationTypeId(string2Uuid(dataOfferingGroupsTableRelTypeId))
+						.targetId(tableRel.getTarget().getId())
+						.build()
+						).getResults()
+				loggerApi.info('TableRelation-->'+findTabRel)
+				if(findTabRel.isEmpty()) {
+					def tableRelt = relationApi.addRelation(
+							AddRelationRequest.builder()
+							.sourceId(dataOfferingAssetId)
+							.typeId(string2Uuid(dataOfferingGroupsTableRelTypeId))
+							.targetId(tableRel.getTarget().getId())
+							.build()
+							)
+				}
+			}
+		}
+		/*Find Column Relation*/
+		def columnAssets = []
+		def columnRels =[]
+		
+		for(table in tableAssets) {
+			columnRels = relationApi.findRelations(
+					FindRelationsRequest.builder()
+					.targetId(string2Uuid(table))
+					.relationTypeId(string2Uuid(columnPartOfTableRelTypeId))
+					.build()
+					).getResults()
+
+			for(columnRel in columnRels)
+			{
+				columnAssets.add(uuid2String(columnRel.getSource().getId()))
+				
+				def findColRel=relationApi.findRelations(
+					FindRelationsRequest.builder()
+					.sourceId(dataOfferingAssetId)
+					.relationTypeId(string2Uuid(dataOfferingGroupsFieldColumnRelTypeId))
+					.targetId(columnRel.getSource().getId())
+					.build()
+					).getResults()
+				
+				loggerApi.info('columnRelation-->'+findColRel)
+
+				if(findColRel.isEmpty()) {
+					def columnRelt = relationApi.addRelation(
+							AddRelationRequest.builder()
+							.sourceId(dataOfferingAssetId)
+							.typeId(string2Uuid(dataOfferingGroupsFieldColumnRelTypeId))
+							.targetId(columnRel.getSource().getId())
+							.build()
+							)
+				}
+			}
+		}
+		
+		/*Avro Schema Relation*/
+		def avroRelation
+		def findAvroRel
+		for(schema in avroSchemas) {
+			findAvroRel=relationApi.findRelations(FindRelationsRequest.builder()
+					.sourceId(dataOfferingAssetId)
+					.relationTypeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+					.targetId(string2Uuid(schema))
+					.build()
+					).getResults()
+			loggerApi.info('schema--'+schema)
+			loggerApi.info('findAvroRel--'+findAvroRel)
+			if(findAvroRel.isEmpty()) {
+				avroRelation = relationApi.addRelation(AddRelationRequest.builder()
+						.sourceId(dataOfferingAssetId)
+						.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+						.targetId(string2Uuid(schema))
+						.build()
+						)
+			}
+		}
+	}
+	if(selectAllTablesAndColumns == "none" && validateNormalSchema == false) {
+		for(avSchema in avroList) {
+			def findAvroRelOnly=relationApi.findRelations(FindRelationsRequest.builder()
+					.sourceId(dataOfferingAssetId)
+					.relationTypeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+					.targetId(string2Uuid(avSchema))
+					.build()
+					).getResults()
+			loggerApi.info('schema--'+avSchema)
+			loggerApi.info('findAvroRelOnly--'+findAvroRelOnly)
+			if(findAvroRelOnly.isEmpty()) {
+				avroRelation = relationApi.addRelation(AddRelationRequest.builder()
+						.sourceId(dataOfferingAssetId)
+						.typeId(string2Uuid(dataOfferingGroupsSchemasRelId))
+						.targetId(string2Uuid(avSchema))
+						.build()
+						)
+			}
+		}
+	}
+	/*Find stroage domain id*/
+	def domainNameStorage = assetApi.getAsset(dataOfferingAssetId).getDomain().getName()
+	
+	def domainSplit = domainNameStorage.split(" - ");
+	
+	loggerApi.info('findAttr ----&gt;'+domainSplit)
+	
+	def domainIdStorage = assetApi.getAsset(dataOfferingAssetId).getDomain().getId()
+	def commId = domainApi.getDomain(domainIdStorage).getCommunity().getId()
+	
+	def addDot = selectedSchemaList.split(",")
+	def listArraySchema = []
+	if(addDot.size() == 0) {
+		//listArraySchema.add("\"${selectedSchemaList}\"")
+		listArraySchema.add(selectedSchemaList)
+	}
+	for(li in addDot) {
+		loggerApi.info("lilililili==="+"\"${li}\"")
+		//listArraySchema.add("\"${li}\"")
+		listArraySchema.add(li)
+	}
+	
+	def storageDomainId = findDomain(domainSplit[0].trim() +' - Storage Platforms', MatchMode.EXACT, string2Uuid(storageDomainTypeId), commId)
+	loggerApi.info('findAttr ----&gt;'+storageDomainId)
+	execution.setVariable('storageDomain',uuid2String(storageDomainId.get(0).getId()))
+	execution.setVariable('redirectUrl',applicationApi.getInfo().getBaseUrl()+"domain/"+uuid2String(storageDomainId.get(0).getId()))
+	execution.setVariable('selectedSchemaToList',listArraySchema.join('.'))
+	
+	}
+
+catch(Exception ex) {
+	isError = true
+	errorMessage = ex.getMessage()
+	execution.setVariable('isError',isError)
+	execution.setVariable('errorMessage',errorMessage)
+}
+
+]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow37" sourceRef="scripttask5" targetRef="exclusivegateway5"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway7" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow39" sourceRef="scripttask4" targetRef="exclusivegateway7"></sequenceFlow>
+    <sequenceFlow id="flow40" sourceRef="exclusivegateway7" targetRef="exclusivegateway1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${validationMsg==""}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow41" sourceRef="exclusivegateway7" targetRef="usertask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${validationMsg!=""}]]></conditionExpression>
+    </sequenceFlow>
+    <userTask id="usertask5" name="Select Data set" activiti:candidateUsers="user(${startUser})">
+      <extensionElements>
+        <activiti:formProperty id="selectedDatset" name="Select Data Set" type="term" required="true">
+          <activiti:value id="proposedValues" name="${datasets}"></activiti:value>
+          <activiti:value id="proposedFixed" name="true"></activiti:value>
+          <activiti:value id="multiValue" name="false"></activiti:value>
+        </activiti:formProperty>
+        <activiti:formProperty id="submit1" name="Submit" type="button"></activiti:formProperty>
+        <activiti:formProperty id="cancel1" name="Cancel" type="button"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <exclusiveGateway id="exclusivegateway8" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow44" sourceRef="exclusivegateway8" targetRef="scripttask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${fromWorkflow==true}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway9" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow46" sourceRef="usertask5" targetRef="exclusivegateway9"></sequenceFlow>
+    <sequenceFlow id="flow47" sourceRef="exclusivegateway9" targetRef="scripttask1">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${submit1}]]></conditionExpression>
+    </sequenceFlow>
+    <endEvent id="endevent5" name="End"></endEvent>
+    <sequenceFlow id="flow48" sourceRef="exclusivegateway9" targetRef="endevent5">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${cancel1}]]></conditionExpression>
+    </sequenceFlow>
+    <scriptTask id="scripttask8" name="Script Task" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[import com.collibra.dgc.core.api.dto.PagedResponse
+import com.collibra.dgc.core.api.dto.instance.asset.FindAssetsRequest
+import com.collibra.dgc.core.api.dto.instance.attribute.FindAttributesRequest
+import com.collibra.dgc.core.api.dto.instance.relation.FindRelationsRequest
+import com.collibra.dgc.core.api.model.instance.Asset
+import java.security.KeyStore.Entry.Attribute
+import javax.management.relation.Relation
+
+
+def findAssets(typeIds, domainId) {
+
+	List<Asset> assets = new ArrayList<Asset>();
+	FindAssetsRequest.Builder   builder         = new FindAssetsRequest().builder();
+	Boolean moreToProcess                               = true;
+	int offset                                          = 0;
+	while(moreToProcess){
+		builder
+				.offset(offset)
+				.limit(1000)
+		PagedResponse<Asset> response  = assetApi.findAssets(builder.typeIds(typeIds).domainId(domainId).build());
+		assets.addAll(response.getResults());
+		if(assets.size()==response.total){
+			moreToProcess = false;
+		}
+		else
+		{
+			offset = assets.size();
+		}
+	}
+	return assets;
+}
+//Method Name:  findAssets(name, matchMode,statusIds,typeIds, domainId,communityId)
+
+
+def findAttributes(assetId, typeIds) {
+
+	List<Attribute> attributes = new ArrayList<Attribute>();
+	FindAttributesRequest.Builder builder = new FindAttributesRequest().builder();
+	Boolean moreToProcess  = true;
+	int offset = 0;
+	while(moreToProcess){
+		builder
+				.offset(offset)
+				.limit(1000)
+		PagedResponse<Attribute> response  = attributeApi.findAttributes(builder.assetId(assetId).typeIds(typeIds).build());
+		attributes.addAll(response.getResults());
+		if(attributes.size()==response.total){
+			moreToProcess = false;
+		}
+		else {
+			offset = attributes.size();
+		}
+	}
+	return attributes;
+}
+
+//Method Name : findAttributes(assetId, typeIds)
+
+
+def findRelations(sourceId,relationTypeId,targetId) {
+
+	List<Relation> relations = new ArrayList<Relation>();
+	FindRelationsRequest.Builder   builder         = new FindRelationsRequest().builder();
+	Boolean moreToProcess                               = true;
+	int offset                                          = 0;
+	while(moreToProcess){
+		builder
+				.offset(offset)
+				.limit(1000)
+		PagedResponse<Relation> response  =  relationApi.findRelations(builder.sourceId(sourceId).targetId(targetId).relationTypeId(relationTypeId).build());
+		relations.addAll(response.getResults());
+		if(relations.size()==response.total){
+			moreToProcess = false;
+		}
+		else
+		{
+			offset = relations.size();
+		}
+	}
+	return relations;
+}
+
+//Method Name : findRelations(sourceId,relationTypeId,targetId)
+
+
+def domainName = item.getName()
+def sealId
+if(domainName.contains('-')) {
+	sealId = domainName.split(' -')[0]
+}
+
+loggerApi.info("sealId ==========> "+sealId)
+
+def assetType = []
+assetType.add(string2Uuid(applicatioAssetTypeId))
+
+loggerApi.info("assetType ==========> "+assetType)
+
+
+loggerApi.info("sealApplicationDomainId ==========> "+sealApplicationDomainId)
+
+
+def sealAssets = findAssets(assetType, string2Uuid(sealApplicationDomainId))
+ 
+loggerApi.info("sealAssets ==========> "+sealAssets)
+
+def appliAttrValue
+def requiredSealApplication
+
+if(!sealAssets.isEmpty()) {
+	for(sealAsset in sealAssets) {
+		def sealAssetId = sealAsset.getId()
+loggerApi.info("sealAssetId ==========> "+sealAssetId)
+
+		def applicationAttr = findAttributes(sealAssetId, [string2Uuid(applicationIdAttrTyprId)])
+		loggerApi.info("applicationAttr ==========> "+applicationAttr)
+		
+		if(!applicationAttr.isEmpty()) {
+		appliAttrValue = applicationAttr.get(0).getValue().toString()
+		def a1 = appliAttrValue.replaceAll("\\<[^>]*>","")
+		loggerApi.info("a1 ==========> "+a1)
+		
+		if(sealId == a1) {
+			loggerApi.info(" found")
+			requiredSealApplication = sealAssetId
+		}
+		else {
+			loggerApi.info("not found")
+		}
+	}
+	}
+}
+
+loggerApi.info("requiredSealApplication =============> "+ requiredSealApplication)
+
+
+def producesDatasets = findRelations(null,string2Uuid(datasetProducedByApplicationRelTypeId),requiredSealApplication)
+loggerApi.info("producesDatasets ===========> "+producesDatasets)
+
+def datasets = []
+
+if(!producesDatasets.isEmpty()) {
+	for(producesDataset in producesDatasets) {
+loggerApi.info("producesDataset ===========> "+producesDataset)
+
+	datasets.add(producesDataset.getSource().getId())
+	}
+}
+
+loggerApi.info("datasets ===========> "+datasets)
+
+execution.setVariable('datasets',datasets)
+
+]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow49" sourceRef="exclusivegateway8" targetRef="scripttask8">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${fromWorkflow==false}]]></conditionExpression>
+    </sequenceFlow>
+    <scriptTask id="scripttask9" name="Script Task" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[
+if(fromWorkflow.toBoolean()==true) {
+	loggerApi.info("Hlooooo")
+	loggerApi.info("selectedDatset ===========> "+selectedDatset)
+
+def datasetFound=false
+
+if(!selectedDatset.isEmpty()) {
+	datasetFound=true
+}
+
+execution.setVariable('datasetFound',datasetFound)
+}
+
+loggerApi.info("fromWorkflow ============> "+fromWorkflow)
+
+
+
+loggerApi.info("=====================================================================================")]]></script>
+    </scriptTask>
+    <sequenceFlow id="flow51" sourceRef="startevent1" targetRef="scripttask9"></sequenceFlow>
+    <sequenceFlow id="flow52" sourceRef="scripttask9" targetRef="exclusivegateway8"></sequenceFlow>
+    <exclusiveGateway id="exclusivegateway10" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow53" sourceRef="usertask1" targetRef="exclusivegateway10"></sequenceFlow>
+    <endEvent id="endevent6" name="End"></endEvent>
+    <sequenceFlow id="flow54" sourceRef="exclusivegateway10" targetRef="endevent6">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${cancel}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway11" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow55" sourceRef="scripttask8" targetRef="exclusivegateway11"></sequenceFlow>
+    <userTask id="usertask6" name="No Data set(s) exists with this Seal Id" activiti:candidateUsers="user(${startUser})">
+      <documentation>Please create Data set with this Seal Id.</documentation>
+    </userTask>
+    <sequenceFlow id="flow56" sourceRef="exclusivegateway11" targetRef="usertask6">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${datasets.isEmpty()}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow57" sourceRef="exclusivegateway11" targetRef="usertask5">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${!datasets.isEmpty()}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow58" sourceRef="usertask6" targetRef="endevent5"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Collaboration">
+    <bpmndi:BPMNPlane bpmnElement="Collaboration" id="BPMNPlane_Collaboration">
+      <bpmndi:BPMNShape bpmnElement="dsr_Describe_Data_Offering" id="BPMNShape_dsr_Describe_Data_Offering">
+        <omgdc:Bounds height="400.0" width="1641.0" x="10.0" y="1.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="lane1" id="BPMNShape_lane1">
+        <omgdc:Bounds height="400.0" width="1621.0" x="30.0" y="1.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="40.0" y="72.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="BPMNShape_usertask1">
+        <omgdc:Bounds height="65.0" width="141.0" x="560.0" y="57.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask2" id="BPMNShape_scripttask2">
+        <omgdc:Bounds height="60.0" width="117.0" x="1100.0" y="59.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask1" id="BPMNShape_scripttask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="438.0" y="62.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway1" id="BPMNShape_exclusivegateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="1018.0" y="69.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway2" id="BPMNShape_exclusivegateway2">
+        <omgdc:Bounds height="40.0" width="40.0" x="1322.0" y="68.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask2" id="BPMNShape_usertask2">
+        <omgdc:Bounds height="59.0" width="105.0" x="1520.0" y="60.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent2" id="BPMNShape_endevent2">
+        <omgdc:Bounds height="35.0" width="35.0" x="1056.0" y="330.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask1" id="BPMNShape_servicetask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="986.0" y="260.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask4" id="BPMNShape_scripttask4">
+        <omgdc:Bounds height="55.0" width="105.0" x="800.0" y="62.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask3" id="BPMNShape_usertask3">
+        <omgdc:Bounds height="55.0" width="105.0" x="1330.0" y="260.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundarytimer1" id="BPMNShape_boundarytimer1">
+        <omgdc:Bounds height="30.0" width="30.0" x="1330.0" y="299.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent4" id="BPMNShape_endevent4">
+        <omgdc:Bounds height="35.0" width="35.0" x="1325.0" y="10.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway5" id="BPMNShape_exclusivegateway5">
+        <omgdc:Bounds height="40.0" width="40.0" x="1018.0" y="194.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask2" id="BPMNShape_servicetask2">
+        <omgdc:Bounds height="55.0" width="105.0" x="1290.0" y="187.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask4" id="BPMNShape_usertask4">
+        <omgdc:Bounds height="55.0" width="105.0" x="1490.0" y="187.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundarytimer2" id="BPMNShape_boundarytimer2">
+        <omgdc:Bounds height="30.0" width="30.0" x="1565.0" y="225.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway6" id="BPMNShape_exclusivegateway6">
+        <omgdc:Bounds height="40.0" width="40.0" x="1160.0" y="194.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask5" id="BPMNShape_scripttask5">
+        <omgdc:Bounds height="55.0" width="121.0" x="978.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway7" id="BPMNShape_exclusivegateway7">
+        <omgdc:Bounds height="40.0" width="40.0" x="930.0" y="69.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask5" id="BPMNShape_usertask5">
+        <omgdc:Bounds height="55.0" width="105.0" x="340.0" y="170.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway8" id="BPMNShape_exclusivegateway8">
+        <omgdc:Bounds height="40.0" width="40.0" x="250.0" y="69.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway9" id="BPMNShape_exclusivegateway9">
+        <omgdc:Bounds height="40.0" width="40.0" x="470.0" y="177.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent5" id="BPMNShape_endevent5">
+        <omgdc:Bounds height="35.0" width="35.0" x="473.0" y="250.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask8" id="BPMNShape_scripttask8">
+        <omgdc:Bounds height="55.0" width="105.0" x="218.0" y="177.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask9" id="BPMNShape_scripttask9">
+        <omgdc:Bounds height="55.0" width="105.0" x="120.0" y="62.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway10" id="BPMNShape_exclusivegateway10">
+        <omgdc:Bounds height="40.0" width="40.0" x="730.0" y="69.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent6" id="BPMNShape_endevent6">
+        <omgdc:Bounds height="35.0" width="35.0" x="733.0" y="10.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway11" id="BPMNShape_exclusivegateway11">
+        <omgdc:Bounds height="40.0" width="40.0" x="250.0" y="267.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask6" id="BPMNShape_usertask6">
+        <omgdc:Bounds height="55.0" width="105.0" x="218.0" y="330.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="543.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="560.0" y="89.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="1058.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1100.0" y="89.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="32.0" x="1057.0" y="44.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
+        <omgdi:waypoint x="1018.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1038.0" y="120.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
+        <omgdi:waypoint x="1362.0" y="88.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1520.0" y="89.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="24.0" x="1392.0" y="59.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
+        <omgdi:waypoint x="1342.0" y="68.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1342.0" y="45.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="48.0" width="40.0" x="1281.0" y="31.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow13" id="BPMNEdge_flow13">
+        <omgdi:waypoint x="1625.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1643.0" y="90.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1643.0" y="277.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1643.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1091.0" y="347.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow19" id="BPMNEdge_flow19">
+        <omgdi:waypoint x="1091.0" y="287.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1330.0" y="287.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow20" id="BPMNEdge_flow20">
+        <omgdi:waypoint x="770.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="800.0" y="89.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow24" id="BPMNEdge_flow24">
+        <omgdi:waypoint x="1217.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1322.0" y="88.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow26" id="BPMNEdge_flow26">
+        <omgdi:waypoint x="1345.0" y="329.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1344.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1091.0" y="347.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow27" id="BPMNEdge_flow27">
+        <omgdi:waypoint x="1382.0" y="315.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1382.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1132.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1091.0" y="347.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow30" id="BPMNEdge_flow30">
+        <omgdi:waypoint x="1038.0" y="234.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1038.0" y="260.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow31" id="BPMNEdge_flow31">
+        <omgdi:waypoint x="1058.0" y="214.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1160.0" y="214.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow32" id="BPMNEdge_flow32">
+        <omgdi:waypoint x="1395.0" y="214.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1490.0" y="214.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow33" id="BPMNEdge_flow33">
+        <omgdi:waypoint x="1542.0" y="242.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1542.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1091.0" y="347.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow34" id="BPMNEdge_flow34">
+        <omgdi:waypoint x="1580.0" y="255.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1579.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1100.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1091.0" y="347.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow35" id="BPMNEdge_flow35">
+        <omgdi:waypoint x="1200.0" y="214.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1290.0" y="214.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow36" id="BPMNEdge_flow36">
+        <omgdi:waypoint x="1180.0" y="234.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1180.0" y="287.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1091.0" y="287.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow37" id="BPMNEdge_flow37">
+        <omgdi:waypoint x="1038.0" y="175.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1038.0" y="194.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow39" id="BPMNEdge_flow39">
+        <omgdi:waypoint x="905.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="930.0" y="89.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow40" id="BPMNEdge_flow40">
+        <omgdi:waypoint x="970.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1018.0" y="89.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow41" id="BPMNEdge_flow41">
+        <omgdi:waypoint x="950.0" y="109.0"></omgdi:waypoint>
+        <omgdi:waypoint x="949.0" y="208.0"></omgdi:waypoint>
+        <omgdi:waypoint x="630.0" y="208.0"></omgdi:waypoint>
+        <omgdi:waypoint x="630.0" y="122.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow44" id="BPMNEdge_flow44">
+        <omgdi:waypoint x="290.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="438.0" y="89.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow46" id="BPMNEdge_flow46">
+        <omgdi:waypoint x="445.0" y="197.0"></omgdi:waypoint>
+        <omgdi:waypoint x="470.0" y="197.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow47" id="BPMNEdge_flow47">
+        <omgdi:waypoint x="490.0" y="177.0"></omgdi:waypoint>
+        <omgdi:waypoint x="490.0" y="117.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow48" id="BPMNEdge_flow48">
+        <omgdi:waypoint x="490.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="490.0" y="250.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow49" id="BPMNEdge_flow49">
+        <omgdi:waypoint x="270.0" y="109.0"></omgdi:waypoint>
+        <omgdi:waypoint x="270.0" y="177.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow51" id="BPMNEdge_flow51">
+        <omgdi:waypoint x="75.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="120.0" y="89.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow52" id="BPMNEdge_flow52">
+        <omgdi:waypoint x="225.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="250.0" y="89.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow53" id="BPMNEdge_flow53">
+        <omgdi:waypoint x="701.0" y="89.0"></omgdi:waypoint>
+        <omgdi:waypoint x="730.0" y="89.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow54" id="BPMNEdge_flow54">
+        <omgdi:waypoint x="750.0" y="69.0"></omgdi:waypoint>
+        <omgdi:waypoint x="750.0" y="45.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow55" id="BPMNEdge_flow55">
+        <omgdi:waypoint x="270.0" y="232.0"></omgdi:waypoint>
+        <omgdi:waypoint x="270.0" y="267.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow56" id="BPMNEdge_flow56">
+        <omgdi:waypoint x="270.0" y="307.0"></omgdi:waypoint>
+        <omgdi:waypoint x="270.0" y="330.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow57" id="BPMNEdge_flow57">
+        <omgdi:waypoint x="290.0" y="287.0"></omgdi:waypoint>
+        <omgdi:waypoint x="392.0" y="286.0"></omgdi:waypoint>
+        <omgdi:waypoint x="392.0" y="225.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow58" id="BPMNEdge_flow58">
+        <omgdi:waypoint x="323.0" y="357.0"></omgdi:waypoint>
+        <omgdi:waypoint x="490.0" y="357.0"></omgdi:waypoint>
+        <omgdi:waypoint x="490.0" y="285.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
